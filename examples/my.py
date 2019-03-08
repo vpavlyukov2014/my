@@ -15,7 +15,7 @@ def main():
             ht = 2*i + 1
             x_off = 3*i + 1
             if link >= (i+1):
-                draw.rectangle((x_start + x_off), (y_start + char_ht - (1+ht)), 2, fill="purple")
+                draw.rectangle(((x_start + x_off), (y_start + char_ht - (1+ht)), 2, ht), fill="white")
         time.sleep(5)
         draw.text((device.width - 10, 30 + 16), 'World!', fill="purple")
         time.sleep(20)
