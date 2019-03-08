@@ -32,4 +32,9 @@ def main():
         #         draw.text((10, 16), str(now.time()), fill="white")
         #         time.sleep(0.1)
 
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
 
