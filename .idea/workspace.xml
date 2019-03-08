@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/ssd1322.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/ssd1322.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/hotspot/clock.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/hotspot/clock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/hotspot/cpu_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/hotspot/cpu_load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/hotspot/disk.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/hotspot/disk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/hotspot/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/hotspot/memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/hotspot/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/hotspot/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/hotspot/uptime.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/hotspot/uptime.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/my.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/my.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/wifi_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/wifi_level.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/my.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="480">
+              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -78,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="47" column="84" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="84" />
+            <state relative-caret-position="530">
+              <caret line="100" column="12" lean-forward="true" selection-start-line="96" selection-end-line="100" selection-end-column="12" />
               <folding>
                 <element signature="e#311#322#0" expanded="true" />
               </folding>
@@ -293,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="47" column="84" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="84" />
+        <state relative-caret-position="530">
+          <caret line="100" column="12" lean-forward="true" selection-start-line="96" selection-end-line="100" selection-end-column="12" />
           <folding>
             <element signature="e#311#322#0" expanded="true" />
           </folding>
@@ -303,8 +295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/my.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="480">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

@@ -1,4 +1,6 @@
 import time
+import datetime
+
 from demo_opts import get_device
 from luma.core.render import canvas
 
@@ -17,6 +19,17 @@ def main():
         time.sleep(5)
         draw.text((device.width - 10, 30 + 16), 'World!', fill="purple")
         time.sleep(20)
+        for x in range(40):
+            with canvas(device) as draw:
+                now = datetime.datetime.now()
+                draw.text((x, 4), str(now.date()), fill="white")
+                draw.text((10, 16), str(now.time()), fill="white")
+                time.sleep(0.1)
 
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
 
 
