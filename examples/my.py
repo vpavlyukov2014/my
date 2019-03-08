@@ -10,6 +10,7 @@ def main():
     char_ht = 10
     device = get_device()
     for link in range(0, 4):
+      for _ in range(10):
         with canvas(device) as draw:
             print("Testing ramka...")
             draw.rectangle(device.bounding_box, outline="white")
