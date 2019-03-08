@@ -5,7 +5,7 @@
 
 from datetime import datetime
 import psutil
-from hotspot.common import title_text, right_text
+from examples.hotspot import title_text, right_text
 
 
 def render(draw, width, height):
