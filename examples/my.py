@@ -11,7 +11,7 @@ def main():
     char_ht = 0
     device = get_device()
     with canvas(device) as draw:
-        draw.rectangle((10, 10, 10, 10), fill="black")
+        draw.rectangle((1, 1, 10, 10), fill="purple")
         draw.rectangle((100, 100, 10, 10), fill="white")
         for i in range(0, 4):
             ht = 2*i + 1
