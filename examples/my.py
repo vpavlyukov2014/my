@@ -14,11 +14,10 @@ def main():
         with canvas(device) as draw:
             print("Testing ramka...")
             time.sleep(1)
-            for i in range(1, 5):
-                ht = 2*i + 1
-                x_off = 3*i + 1
-                if link >= (i+1):
-                    draw.rectangle(((x_start + x_off), (y_start + char_ht - (1+ht)), 1, ht), fill="white")
+            draw.rectangle(0, 0, 1, link)
+            # for i in range(0, link):
+            #     x_off = i*3
+            #     draw.rectangle(((x_start + x_off), (y_start + char_ht - (1+ht)), 1, ht), fill="white")
 
 
 if __name__ == "__main__":
