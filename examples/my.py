@@ -5,12 +5,12 @@ from demo_opts import get_device
 from luma.core.render import canvas
 
 def main():
-    x_start = 0
+    device = get_device()
     y_start = 0
     h = 3
     w = 2
     s = 2
-    device = get_device()
+    x_start = device.width - 26
     for link in range(0, 5):
       for _ in range(3):
         with canvas(device) as draw:
