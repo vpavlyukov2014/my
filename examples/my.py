@@ -7,11 +7,12 @@ from luma.core.render import canvas
 def main():
     device = get_device()
     y_start = 0
+    signal_range = 15
     h = 2
     w = 2
     s = 2
-    x_start = device.width - 15
-    for link in range(0, 5):
+    x_start = device.width - ((w + s) * (signal_range - 1) - 1)
+    for link in range(0, signal_range):
       for _ in range(3):
         with canvas(device) as draw:
             print("Testing ramka...")
