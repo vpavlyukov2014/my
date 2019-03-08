@@ -7,10 +7,10 @@ from luma.core.render import canvas
 def main():
     device = get_device()
     y_start = 0
-    h = 3
+    h = 2
     w = 2
     s = 2
-    x_start = device.width - 14
+    x_start = device.width - 15
     for link in range(0, 5):
       for _ in range(3):
         with canvas(device) as draw:
