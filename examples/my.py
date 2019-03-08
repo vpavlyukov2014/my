@@ -7,7 +7,7 @@ from luma.core.render import canvas
 def main():
     device = get_device()
     y_start = 0
-    signal_range = 60
+    signal_range = 5
     h = 2
     w = 2
     s = 2
@@ -22,7 +22,7 @@ def main():
                 y0 = y_start
                 x1 = x_start + w + (s + w)*i
                 y1 = h * i + 1
-                draw.rectangle((x0, y0, x1, y1), fill="white")
+                draw.rectangle((x0, y0, x1, y1), fill="red")
 
 
 if __name__ == "__main__":
