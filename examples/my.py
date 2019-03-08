@@ -16,6 +16,7 @@ def main():
                 draw.rectangle(x_start + x_off, y_start + char_ht - (1+ht), 2, ht, fill="white")
         time.sleep(5)
         draw.text((device.width - 10, 30 + 16), 'World!', fill="purple")
+        time.sleep(20)
 
 
 
