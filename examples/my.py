@@ -6,11 +6,13 @@ from luma.core.render import canvas
 
 def main():
     link = 5
-    x_start = 10
-    y_start = 10
-    char_ht = 10
+    x_start = 0
+    y_start = 0
+    char_ht = 0
     device = get_device()
     with canvas(device) as draw:
+        draw.rectangle((10, 10, 10, 10), fill="black")
+        draw.rectangle((100, 100, 10, 10), fill="white")
         for i in range(0, 4):
             ht = 2*i + 1
             x_off = 3*i + 1
