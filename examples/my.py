@@ -16,7 +16,7 @@ def main():
       for _ in range(3):
         with canvas(device) as draw:
             print("Testing ramka...")
-            time.sleep(1)
+            time.sleep(0.1)
             for i in range(0, link):
                 x0 = x_start + (w + s)*i
                 y0 = y_start
