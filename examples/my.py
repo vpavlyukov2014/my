@@ -7,7 +7,7 @@ from luma.core.render import canvas
 def main():
     device = get_device()
     y_start = 0
-    signal_range = 15
+    signal_range = 30
     h = 2
     w = 2
     s = 2
