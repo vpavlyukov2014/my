@@ -10,7 +10,7 @@ def main():
     h = 3
     w = 2
     s = 2
-    x_start = device.width - 26
+    x_start = device.width - 20
     for link in range(0, 5):
       for _ in range(3):
         with canvas(device) as draw:
