@@ -5,16 +5,15 @@ from demo_opts import get_device
 from luma.core.render import canvas
 
 def main():
-    link = 5
     x_start = 10
     y_start = 10
-    char_ht = 10
+    char_ht = 1
     device = get_device()
-    for _ in range(20):
+    for link in range(0, 4):
         with canvas(device) as draw:
             print("Testing ramka...")
             draw.rectangle(device.bounding_box, outline="white")
-            time.sleep(5)
+            time.sleep(3)
             for i in range(0, 4):
                 ht = 2*i + 1
                 x_off = 3*i + 1
