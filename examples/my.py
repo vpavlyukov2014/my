@@ -14,7 +14,7 @@ def main():
         with canvas(device) as draw:
             print("Testing ramka...")
             time.sleep(1)
-            draw.rectangle(0, 0, 1, link)
+            draw.rectangle((0, 0, 1, link), fill="red")
             # for i in range(0, link):
             #     x_off = i*3
             #     draw.rectangle(((x_start + x_off), (y_start + char_ht - (1+ht)), 1, ht), fill="white")
