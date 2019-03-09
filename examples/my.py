@@ -31,6 +31,7 @@ def wifi_siganl(device, wifi_level):
         y1 = h * i + 1
         with canvas(device) as draw:
             draw.rectangle((x0, y0, x1, y1), fill=color)
+            time.sleep(5)
 
 
 if __name__ == "__main__":
