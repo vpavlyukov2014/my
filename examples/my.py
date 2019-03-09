@@ -5,13 +5,13 @@ from demo_opts import get_device
 from luma.core.render import canvas
 
 def main():
-    wifi_level = 3
+    wifi_level = 2
     device = get_device()
-    for _ in range(2):
+    for _ in range(20):
         with canvas(device) as draw:
             print("Testing display")
             wifi_siganl(device, draw, wifi_level)
-            time.sleep(3)
+            time.sleep(1)
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
