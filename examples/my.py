@@ -9,6 +9,7 @@ def main():
     device = get_device()
     with canvas(device) as draw:
         draw.rectangle(device.bounding_box, outline="white")
+        time.sleep(5)
 
         while True:
             for wifi_level in range(0, 5):
