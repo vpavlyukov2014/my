@@ -22,7 +22,7 @@ def clock(device, draw):
     today_date = now.strftime("%d %b %y")
     today_time = now.strftime("%H:%M:%S")
     size = draw.textsize(today_date)
-    x = left_padding + device.width - padding - size[0]
+    x = padding + left_padding + size[0]
     draw.text((left_padding,0), today_date, fill="yellow")
     draw.text((x,0), today_time, fill="yellow")
 
