@@ -10,7 +10,6 @@ def main():
     for _ in range(200):
         wifi_level = random.randint(0, 5)
         with canvas(device) as draw:
-            print("Testing display")
             wifi_siganl(device, draw, wifi_level)
             time.sleep(3)
 
@@ -20,7 +19,7 @@ def wifi_siganl(device, draw, wifi_level):
     w = 2
     s = 2
     signal_range = 5
-    x_start = device.width - ((w + s) * (signal_range + 1) - 1)
+    x_start = device.width - ((w + s) * (signal_range) - 1)
     for i in range(0, signal_range):
         if i < wifi_level:
             color = "white"
