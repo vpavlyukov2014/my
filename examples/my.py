@@ -1,5 +1,6 @@
 import time
 import random
+import datetime
 
 from demo_opts import get_device
 from luma.core.render import canvas
@@ -11,7 +12,15 @@ def main():
         wifi_level = random.randint(0, 5)
         with canvas(device) as draw:
             wifi_siganl(device, draw, wifi_level)
+            clock(device, draw)
             time.sleep(3)
+
+def clock(device, draw):
+    now = datetime.datetime.now()
+    today_date = now.strftime("%d %b %y")
+    today_time = now.strftime("%H:%M:%S")
+    draw.text((20,0), today_date, fill="white")
+    draw.text((50,0), today_time, fill="white")
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
