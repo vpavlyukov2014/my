@@ -1,5 +1,5 @@
 import time
-import datetime
+import random
 
 from demo_opts import get_device
 from luma.core.render import canvas
@@ -8,6 +8,7 @@ def main():
     wifi_level = 2
     device = get_device()
     for _ in range(20):
+        wifi_level = random.randint(0, 5)
         with canvas(device) as draw:
             print("Testing display")
             wifi_siganl(device, draw, wifi_level)
