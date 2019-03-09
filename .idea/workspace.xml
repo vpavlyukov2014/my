@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/examples/my.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -70,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="74" column="26" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="26" />
+            <state relative-caret-position="437">
+              <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="21" />
               <folding>
                 <element signature="e#311#322#0" expanded="true" />
               </folding>
@@ -224,15 +224,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/hotspot/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#132#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/hotspot/disk.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -295,10 +286,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/hotspot/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#132#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="74" column="26" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="26" />
+        <state relative-caret-position="437">
+          <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="21" />
           <folding>
             <element signature="e#311#322#0" expanded="true" />
           </folding>
@@ -308,7 +308,7 @@
     <entry file="file://$PROJECT_DIR$/examples/my.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
