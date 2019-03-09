@@ -1,6 +1,8 @@
 import time
 import random
 import datetime
+import locale
+locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 from demo_opts import get_device
 from luma.core.render import canvas
@@ -17,14 +19,9 @@ def main():
 
 def clock(device, draw):
     left_padding = 10
-    padding = 10
     now = datetime.datetime.now()
-    today_date = now.strftime("%d %b %y")
-    today_time = now.strftime("%H:%M:%S")
-    size = draw.textsize(today_date)
-    x = padding + left_padding + size[0]
-    draw.text((left_padding,0), today_date, fill="yellow")
-    draw.text((x,0), today_time, fill="yellow")
+    today_time = now.strptime(u'[ %d-%b-%y  %H:%M ]')
+    draw.text((left_padding, 0), today_time, fill="yellow")
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
