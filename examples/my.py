@@ -8,12 +8,11 @@ def main():
     # wifi_level = 5
     device = get_device()
     for wifi_level in range(0, 5):
-        with canvas(device) as draw:
-            print("Testing display")
-            wifi_siganl(device, draw, wifi_level)
-            time.sleep(1)
+        print("Testing display")
+        wifi_siganl(device, wifi_level)
+        time.sleep(1)
 
-def wifi_siganl(device, draw, wifi_level):
+def wifi_siganl(device, wifi_level):
     y_start = 0
     h = 2
     w = 2
@@ -30,7 +29,8 @@ def wifi_siganl(device, draw, wifi_level):
         y0 = y_start
         x1 = x_start + w + (s + w)*i
         y1 = h * i + 1
-        draw.rectangle((x0, y0, x1, y1), fill=color)
+        with canvas(device) as draw:
+            draw.rectangle((x0, y0, x1, y1), fill=color)
 
 
 if __name__ == "__main__":
