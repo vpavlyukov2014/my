@@ -7,18 +7,12 @@ from luma.core.render import canvas
 def main():
     # wifi_level = 5
     device = get_device()
-    with canvas(device) as draw:
-        draw.rectangle(device.bounding_box, outline="white")
-        time.sleep(5)
-    with canvas(device) as draw:
-        draw.rectangle(device.bounding_box, outline="white")
-        time.sleep(5)
-
-        # while True:
-        #     for wifi_level in range(0, 5):
-        #         print("Testing display")
-        #         wifi_siganl(device, draw, wifi_level)
-        #         time.sleep(1)
+    while True:
+        with canvas(device) as draw:
+            for wifi_level in range(0, 5):
+                print("Testing display")
+                wifi_siganl(device, draw, wifi_level)
+                time.sleep(1)
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
