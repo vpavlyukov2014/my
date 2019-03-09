@@ -20,7 +20,7 @@ def wifi_siganl(device, draw, wifi_level):
     w = 2
     s = 2
     signal_range = 5
-    x_start = device.width - ((w + s) * (signal_range) - 1)
+    x_start = device.width - ((w + s) * (signal_range + 1) - 1)
     for i in range(0, signal_range):
         if i <= wifi_level:
             color = "white"
