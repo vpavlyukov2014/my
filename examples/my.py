@@ -10,12 +10,15 @@ def main():
     with canvas(device) as draw:
         draw.rectangle(device.bounding_box, outline="white")
         time.sleep(5)
+    with canvas(device) as draw:
+        draw.rectangle(device.bounding_box, outline="white")
+        time.sleep(5)
 
-        while True:
-            for wifi_level in range(0, 5):
-                print("Testing display")
-                wifi_siganl(device, draw, wifi_level)
-                time.sleep(1)
+        # while True:
+        #     for wifi_level in range(0, 5):
+        #         print("Testing display")
+        #         wifi_siganl(device, draw, wifi_level)
+        #         time.sleep(1)
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
