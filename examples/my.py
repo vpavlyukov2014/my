@@ -10,8 +10,6 @@ def main():
     with canvas(device) as draw:
         draw.rectangle(device.bounding_box, outline="white")
 
-    with canvas(device) as draw:
-        device.show()
         while True:
             for wifi_level in range(0, 5):
                 print("Testing display")
