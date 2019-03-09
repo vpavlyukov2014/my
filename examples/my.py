@@ -20,7 +20,7 @@ def main():
 def clock(device, draw):
     left_padding = 10
     now = datetime.datetime.now()
-    today_time = now.strptime(u'[ %d-%b-%y  %H:%M ]')
+    today_time = now.strftime("%d.%b.%Y   %H:%M ")
     draw.text((left_padding, 0), today_time, fill="yellow")
 
 def wifi_siganl(device, draw, wifi_level):
