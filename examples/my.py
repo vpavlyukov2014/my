@@ -28,11 +28,11 @@ def clock(device, draw):
     left_padding = 0
     now = datetime.datetime.now()
     today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
-    draw.text((left_padding, 0), today_time, font=font(10), fill="yellow")
+    draw.text((left_padding, 0), today_time, font=font(10), fill="white")
 
 
 def font(size):
-    return make_font('11719.ttf', size)
+    return make_font('15309.otf', size)
 
 
 def encode_text(text):
