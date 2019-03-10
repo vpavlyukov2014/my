@@ -23,7 +23,7 @@ def clock(device, draw):
     font = make_font('Verdana.ttf', 10)
     left_padding = 10
     now = datetime.datetime.now()
-    today_time = now.strftime("%d.%b.%Y   %H:%M:%S ")
+    today_time = now.strftime("%d.%b.%Y дата  %H:%M:%S ")
     draw.text((left_padding, 0), today_time, font=font, fill="yellow")
 
 def wifi_siganl(device, draw, wifi_level):
