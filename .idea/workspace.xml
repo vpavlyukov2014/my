@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/fonts/Font Awesome 5 Brands-Regular-400.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/fonts/Font Awesome 5 Pro-Light-300.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/fonts/Font Awesome 5 Pro-Regular-400.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/fonts/Font Awesome 5 Pro-Solid-900.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/font_awesome.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/font_awesome.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/font_awesome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="143" column="41" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="41" />
+            <state relative-caret-position="130">
+              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -124,6 +120,7 @@
         <option value="$PROJECT_DIR$/examples/conf" />
         <option value="$PROJECT_DIR$/examples/wifi_level.py" />
         <option value="$PROJECT_DIR$/examples/my.py" />
+        <option value="$PROJECT_DIR$/examples/font_awesome.py" />
       </list>
     </option>
   </component>
@@ -205,6 +202,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1400" height="749" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -336,8 +334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/font_awesome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="143" column="41" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="41" />
+        <state relative-caret-position="130">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
         </state>
       </provider>
     </entry>
