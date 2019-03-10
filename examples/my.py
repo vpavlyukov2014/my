@@ -32,7 +32,7 @@ def clock(device, draw):
 
 
 def font(size):
-    return make_font('Comic_Sans_MS_Bold.ttf', size)
+    return make_font('Impact.ttf', size)
 
 
 def encode_text(text):
