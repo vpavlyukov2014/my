@@ -141,7 +141,7 @@ def infinite_shuffle(arr):
 def main(num_iterations=sys.maxsize):
     device = get_device()
     regulator = framerate_regulator(fps=1)
-    font = make_font("fontawesome-webfont.ttf", device.height - 10)
+    font = make_font("Font Awesome 5 Pro-Light-300.otf", device.height - 10)
 
     for code in infinite_shuffle(codes):
         with regulator:
