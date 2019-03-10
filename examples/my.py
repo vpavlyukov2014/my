@@ -23,11 +23,16 @@ def main():
             time.sleep(1)
 
 def clock(device, draw):
-    font = make_font('Verdana.ttf', 10)
     left_padding = 10
     now = datetime.datetime.now()
-    today_time = now.strftime("%d.%b.%Y дата  %H:%M:%S ")
-    draw.text((left_padding, 0), unicode(today_time, 'utf-8'), font=font, fill="yellow")
+    today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
+    draw.text((left_padding, 0), today_time, font=font, fill="yellow")
+
+def font(size):
+    make_font('Verdana.ttf', size)
+    
+def encode_text(text):
+     unicode(text, 'utf-8')
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
