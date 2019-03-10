@@ -11,6 +11,8 @@ locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 from demo_opts import get_device
 from luma.core.render import canvas
+from luma.core.legacy import show_message
+from luma.core.legacy.font import proportional, SINCLAIR_FONT
 
 
 def main():
@@ -29,6 +31,13 @@ def clock(device, draw):
     now = datetime.datetime.now()
     today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
     draw.text((left_padding, 0), today_time, font=font(12), fill="white")
+
+
+def show_text_message(device):
+    msg = encode_text("Привет AERFRFCESFEWFWEFWFwefwefwefwefwefwefwegwrgwfwEFWEFWEFEFEF fewrfr rfewrfefererfer ferf")
+    # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
+    show_message(device, msg, y_offset=30, fill="white", font=font(12))
+
 
 
 def font(size):
