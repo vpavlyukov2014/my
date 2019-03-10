@@ -32,7 +32,7 @@ def clock(device, draw):
 
 
 def font(size):
-    return make_font('11719.ttf', size)
+    return make_font('C&C Red Alert [INET].ttf', size)
 
 
 def encode_text(text):
