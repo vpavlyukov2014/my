@@ -24,7 +24,7 @@ from luma.core.render import canvas
 from luma.core.sprite_system import framerate_regulator
 
 codes = [
-    "\uf012", "\uf68c", "\uf68d", "\uf68e", "\uf68f", "\uf690", "\uf695"
+    "\uf6ac"
 ]
 
 
@@ -45,7 +45,7 @@ def infinite_shuffle(arr):
 def main(num_iterations=sys.maxsize):
     device = get_device()
     regulator = framerate_regulator(fps=1)
-    font = make_font("Font Awesome 5 Pro-Light-300.otf", 10)
+    font = make_font("Font Awesome 5 Pro-Light-300.otf", 20)
 
     for code in infinite_shuffle(codes):
         with regulator:
