@@ -27,7 +27,7 @@ def clock(device, draw):
     left_padding = 10
     now = datetime.datetime.now()
     today_time = now.strftime("%d.%b.%Y дата  %H:%M:%S ")
-    draw.text((left_padding, 0), today_time, font=font, fill="yellow")
+    draw.text((left_padding, 0), unicode(today_time, 'utf-8'), font=font, fill="yellow")
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
