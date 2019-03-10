@@ -23,14 +23,14 @@ def main():
             time.sleep(1)
 
 def clock(device, draw):
-    left_padding = 10
+    left_padding = 25
     now = datetime.datetime.now()
-    today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
-    draw.text((left_padding, 0), today_time, font=font, fill="yellow")
+    today_time = now.strftime("%d %B %Y, %A  %H:%M:%S ")
+    draw.text((left_padding, 0), encode_text(today_time), font=font(10), fill="yellow")
 
 def font(size):
     make_font('Verdana.ttf', size)
-    
+
 def encode_text(text):
      unicode(text, 'utf-8')
 
