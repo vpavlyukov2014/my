@@ -1,7 +1,9 @@
+import os
 import time
 import random
 import datetime
 import locale
+from PIL import ImageFont
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 from demo_opts import get_device
@@ -18,10 +20,11 @@ def main():
             time.sleep(1)
 
 def clock(device, draw):
+    font = make_font('Verdana.ttf', 10)
     left_padding = 10
     now = datetime.datetime.now()
     today_time = now.strftime("%d.%b.%Y   %H:%M:%S ")
-    draw.text((left_padding, 0), today_time, fill="yellow")
+    draw.text((left_padding, 0), today_time, font=font, fill="yellow")
 
 def wifi_siganl(device, draw, wifi_level):
     y_start = 0
@@ -43,6 +46,11 @@ def wifi_siganl(device, draw, wifi_level):
         draw.rectangle((x0, y0, x1, y1), fill=color)
         text_val = "%s" % wifi_level
         draw.text((0,0), text_val, fill=color)
+
+def make_font(name, size):
+    font_path = os.path.abspath(os.path.join(
+        os.path.dirname(__file__), 'fonts', name))
+    return ImageFont.truetype(font_path, size)
 
 
 if __name__ == "__main__":
