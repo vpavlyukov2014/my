@@ -16,6 +16,21 @@ from luma.core.legacy.font import proportional, LCD_FONT
 from luma.core.sprite_system import framerate_regulator
 
 
+import time
+from textwrap import TextWrapper
+try:
+    monotonic = time.monotonic
+except AttributeError:  # pragma: no cover
+    from monotonic import monotonic
+
+from PIL import Image, ImageDraw, ImageFont
+
+from luma.core import mixin, ansi_color
+from luma.core.threadpool import threadpool
+from luma.core.render import canvas
+from luma.core.util import mutable_string, observable
+
+
 def main():
     wifi_level = 2
     device = get_device()
@@ -76,38 +91,7 @@ def textsize(txt, font):
     return (len(src), 8)
 
 
-def show_message(device, msg, y_offset=0, fill=None, font=None,
-                 scroll_delay=0.03):
-    """
-    Scrolls a message right-to-left across the devices display.
 
-    :param device: The device to scroll across.
-    :param msg: The text message to display (must be ASCII only).
-    :type msg: str
-    :param y_offset: The row to use to display the text.
-    :type y_offset: int
-    :param fill: The fill color to use (standard Pillow color name or RGB
-        tuple).
-    :param font: The font (from :py:mod:`luma.core.legacy.font`) to use.
-    :param scroll_delay: The number of seconds to delay between scrolling.
-    :type scroll_delay: float
-    """
-    fps = 0 if scroll_delay == 0 else 1.0 / scroll_delay
-    regulator = framerate_regulator(fps)
-    with canvas(device) as draw:
-        w, h = textsize(msg, font)
-
-    x = device.width
-    virtual = viewport(device, width=w + x + x, height=device.height)
-
-    with canvas(virtual) as draw:
-        text(draw, (x, y_offset), msg, font=font, fill=fill)
-
-    i = 0
-    while i <= w + x:
-        with regulator:
-            virtual.set_position((i, 0))
-            i += 1
 
 
 if __name__ == "__main__":
@@ -116,23 +100,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         pass
 
-# -*- coding: utf-8 -*-
-# Copyright (c) 2017-18 Richard Hull and contributors
-# See LICENSE.rst for details.
-
-import time
-from textwrap import TextWrapper
-try:
-    monotonic = time.monotonic
-except AttributeError:  # pragma: no cover
-    from monotonic import monotonic
-
-from PIL import Image, ImageDraw, ImageFont
-
-from luma.core import mixin, ansi_color
-from luma.core.threadpool import threadpool
-from luma.core.render import canvas
-from luma.core.util import mutable_string, observable
 
 
 pool = threadpool(4)
@@ -648,3 +615,37 @@ class sevensegment(object):
                     if byte & 0x01:
                         draw.point((x, y), fill="white")
                     byte >>= 1
+
+
+def show_message(device, msg, y_offset=0, fill=None, font=None,
+                 scroll_delay=0.03):
+    """
+    Scrolls a message right-to-left across the devices display.
+
+    :param device: The device to scroll across.
+    :param msg: The text message to display (must be ASCII only).
+    :type msg: str
+    :param y_offset: The row to use to display the text.
+    :type y_offset: int
+    :param fill: The fill color to use (standard Pillow color name or RGB
+        tuple).
+    :param font: The font (from :py:mod:`luma.core.legacy.font`) to use.
+    :param scroll_delay: The number of seconds to delay between scrolling.
+    :type scroll_delay: float
+    """
+    fps = 0 if scroll_delay == 0 else 1.0 / scroll_delay
+    regulator = framerate_regulator(fps)
+    with canvas(device) as draw:
+        w, h = textsize(msg, font)
+
+    x = device.width
+    virtual = viewport(device, width=w + x + x, height=device.height)
+
+    with canvas(virtual) as draw:
+        text(draw, (x, y_offset), msg, font=font, fill=fill)
+
+    i = 0
+    while i <= w + x:
+        with regulator:
+            virtual.set_position((i, 0))
+            i += 1
