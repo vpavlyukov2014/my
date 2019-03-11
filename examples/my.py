@@ -12,7 +12,7 @@ locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.legacy import show_message
-from luma.core.legacy.font import proportional, LCD_FONT
+from luma.core.legacy.font import proportional, SINCLAIR_FONT
 
 
 def main():
@@ -35,13 +35,14 @@ def clock(device, draw):
 
 
 def show_text_message(device):
-    msg = "AERFRFCESFEWFWEFWFwe fwefwefwefwefwefwegwrgwfwEFWEFWEFEFEF fewrfr rfewrfefererfer ferf"
+    msg = 'sdfsdfsfdsdfssdfsdfsdf sdfsdfs dfs df sdf sd fs df sdf sd fs dfsdfsdfsdf'
     # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
-    show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
+    # show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
+    show_message(device, msg, fill="white", font=proportional(SINCLAIR_FONT))
 
 
-def prop_font():
-    return proportional(LCD_FONT)
+# def prop_font():
+    # return proportional(LCD_FONT)
 
 
 def font(size):
