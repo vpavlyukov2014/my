@@ -46,7 +46,7 @@ class viewport(mixin.capabilities):
         assert(image.size == self.size)
 
         self._backing_image.paste(image)
-        self.refresh()
+        # self.refresh()
 
     def set_position(self, xy):
         self._position = xy
@@ -76,7 +76,7 @@ class viewport(mixin.capabilities):
         """
         self._hotspots.remove((hotspot, xy))
         eraser = Image.new(self.mode, hotspot.size)
-        # self._backing_image.paste(eraser, xy)
+        self._backing_image.paste(eraser, xy)
 
     def is_overlapping_viewport(self, hotspot, xy):
         """
