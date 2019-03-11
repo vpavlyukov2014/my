@@ -25,7 +25,7 @@ def main():
         with canvas(device) as draw:
             wifi_siganl(device, draw, wifi_level)
             clock(device, draw)
-            # show_text_message(device)
+            show_text_message(device)
             time.sleep(1)
 
 
