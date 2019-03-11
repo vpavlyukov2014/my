@@ -60,7 +60,7 @@ class viewport(mixin.capabilities):
         """
         (x, y) = xy
         assert(0 <= x <= self.width - hotspot.width)
-        assert(0 <= y <= self.height - hotspot.height)
+        # assert(0 <= y <= self.height - hotspot.height)
 
         # TODO: should it check to see whether hotspots overlap each other?
         # Is sensible to _allow_ them to overlap?
@@ -197,7 +197,7 @@ def show_message(device, msg, y_offset=0, fill=None, font=None,
         w, h = textsize(msg, font)
 
     x = device.width
-    virtual = viewport(device, width=w + x + x, height=device.height)
+    virtual = viewport(device, width=w + x + x, height=10) #device.height)
 
     with canvas(virtual) as draw:
         text(draw, (x, y_offset), msg, font=font, fill=fill)
