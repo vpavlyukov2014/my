@@ -35,7 +35,7 @@ def clock(device, draw):
 
 
 def show_text_message(device):
-    msg = encode_text("Привет AERFRFCESFEWFWEFWFwefwefwefwefwefwefwegwrgwfwEFWEFWEFEFEF fewrfr rfewrfefererfer ferf")
+    msg = "AERFRFCESFEWFWEFWFwe fwefwefwefwefwefwegwrgwfwEFWEFWEFEFEF fewrfr rfewrfefererfer ferf"
     # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
     show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
 
