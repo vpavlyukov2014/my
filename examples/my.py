@@ -63,6 +63,20 @@ def wifi_siganl(device, draw, wifi_level):
         draw.rectangle((x0, y0, x1, y1), fill=color)
 
 
+def textsize(txt, font):
+    """
+    Calculates the bounding box of the text, as drawn in the specified font.
+    This method is most useful for when the
+    :py:class:`~luma.core.legacy.font.proportional` wrapper is used.
+
+    :param txt: The text string to calculate the bounds for
+    :type txt: str
+    :param font: The font (from :py:mod:`luma.core.legacy.font`) to use.
+    """
+    src = [c for ascii_code in txt for c in font[ord(ascii_code)]]
+    return (len(src), 8)
+
+
 def show_message(device, msg, y_offset=0, fill=None, font=None,
                  scroll_delay=0.03):
     """
