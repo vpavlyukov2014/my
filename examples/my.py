@@ -46,7 +46,7 @@ class viewport(mixin.capabilities):
         assert(image.size == self.size)
 
         self._backing_image.paste(image)
-        # self.refresh()
+        self.refresh()
 
     def set_position(self, xy):
         self._position = xy
@@ -138,7 +138,7 @@ def show_text_message(device):
     msg = 'sdfsdfsfdsdfssdfsdfsdf sdfsdfs dfs df sdf sd fs df sdf sd fs dfsdfsdfsdf'
     # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
     # show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
-    show_message(device, msg, y_offset=20, fill="white", font=proportional(LCD_FONT), scroll_delay=0.03)
+    show_message(device, msg, y_offset=20, fill="white", font=proportional(LCD_FONT), scroll_delay=1)
 
 
 def wifi_siganl(device, draw, wifi_level):
