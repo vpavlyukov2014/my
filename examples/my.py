@@ -31,7 +31,7 @@ def main():
 def clock(device, draw):
     left_padding = 10
     now = datetime.datetime.now()
-    today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
+    today_time = now.strftime("%d %B %Y, %A  %H:%M:%S ")
     # draw.text((left_padding, 0), today_time, font=font(12), fill="white")
     # text(draw, xy, txt, fill=None, font=None)
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
@@ -52,8 +52,8 @@ def font(size):
     return make_font('Impact.ttf', size)
 
 
-def encode_text(text):
-    return text.decode('cp1251')
+# def encode_text(text):
+    # return text.decode('cp1251')
      # return unicode(text, 'utf-8')
 
 
