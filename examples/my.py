@@ -53,7 +53,8 @@ def font(size):
 
 
 def encode_text(text):
-     return unicode(text, 'utf-8')
+    return text.encode('cp1251')
+     # return unicode(text, 'utf-8')
 
 
 def wifi_siganl(device, draw, wifi_level):
