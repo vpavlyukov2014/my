@@ -123,7 +123,7 @@ def main():
         with canvas(device) as draw:
             wifi_siganl(device, draw, wifi_level)
             clock(device, draw)
-            show_text_message(device)
+            show_text_message(device, draw)
             time.sleep(1)
 
 
@@ -134,11 +134,15 @@ def clock(device, draw):
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
-def show_text_message(device):
+def show_text_message(device, draw):
     msg = 'sdfsdfsfdsdfssdfsdfsdf sdfsdfs dfs df sdf sd fs df sdf sd fs dfsdfsdfsdf'
     # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
     # show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
-    show_message(device, msg, y_offset=20, fill="white", font=proportional(LCD_FONT), scroll_delay=1)
+    # show_message(device, msg, y_offset=20, fill="white", font=proportional(LCD_FONT), scroll_delay=1)
+    for left_padding in range(device.width):
+        text(draw, (left_padding, 20 ), msg, fill="white", font=proportional(LCD_FONT) )
+        time.sleep(0.3)
+
 
 
 def wifi_siganl(device, draw, wifi_level):
