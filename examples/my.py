@@ -38,7 +38,7 @@ class viewport(mixin.capabilities):
             self.segment_mapper = device.segment_mapper
         self._device = device
         self._backing_image = Image.new(self.mode, self.size)
-        self._position = (0, 20)
+        self._position = (0, 15)
         self._hotspots = []
 
     def display(self, image):
