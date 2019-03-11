@@ -38,7 +38,7 @@ class viewport(mixin.capabilities):
             self.segment_mapper = device.segment_mapper
         self._device = device
         self._backing_image = Image.new(self.mode, self.size)
-        self._position = (0, 0)
+        self._position = (0, 20)
         self._hotspots = []
 
     def display(self, image):
@@ -197,7 +197,7 @@ def show_message(device, msg, y_offset=0, fill=None, font=None,
         w, h = textsize(msg, font)
 
     x = device.width
-    virtual = viewport(device, width=w + x + x, height=25) #device.height)
+    virtual = viewport(device, width=w + x + x, height=20) #device.height)
 
     with canvas(virtual) as draw:
         text(draw, (x, y_offset), msg, font=font, fill=fill)
