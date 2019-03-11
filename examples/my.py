@@ -53,7 +53,7 @@ def font(size):
 
 
 def encode_text(text):
-    return text.encode('cp1251')
+    return text.decode('cp1251')
      # return unicode(text, 'utf-8')
 
 
