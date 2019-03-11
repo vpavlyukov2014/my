@@ -108,7 +108,7 @@ class viewport(mixin.capabilities):
         bottom = top + self._device.height
 
         assert(0 <= left <= right <= self.width)
-        assert(0 <= top <= bottom <= self.height)
+        # assert(0 <= top <= bottom <= self.height)
 
         return (left, top, right, bottom)
 
