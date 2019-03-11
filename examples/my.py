@@ -139,9 +139,9 @@ def show_text_message(device, draw):
     # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
     # show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
     # show_message(device, msg, y_offset=20, fill="white", font=proportional(LCD_FONT), scroll_delay=1)
-    for left_padding in range(device.width):
+    for left_padding in range(30):
         text(draw, (left_padding, 20 ), msg, fill="white", font=proportional(LCD_FONT) )
-        time.sleep(0.3)
+        time.sleep(1)
 
 
 
