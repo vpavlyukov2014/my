@@ -12,6 +12,7 @@ locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.legacy import show_message
+from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
 
 
@@ -23,15 +24,17 @@ def main():
         with canvas(device) as draw:
             wifi_siganl(device, draw, wifi_level)
             clock(device, draw)
-            show_text_message(device)
+            # show_text_message(device)
             time.sleep(1)
 
 
 def clock(device, draw):
-    left_padding = 0
+    left_padding = 10
     now = datetime.datetime.now()
     today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
-    draw.text((left_padding, 0), today_time, font=font(12), fill="white")
+    # draw.text((left_padding, 0), today_time, font=font(12), fill="white")
+    # text(draw, xy, txt, fill=None, font=None)
+    text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
 def show_text_message(device):
