@@ -31,7 +31,7 @@ def clock(device, draw):
     left_padding = 0
     now = datetime.datetime.now()
     today_time = encode_text(now.strftime("%d %B %Y, %A  %H:%M:%S "))
-    draw.text((left_padding, 0), today_time, font=prop_font, fill="white")
+    draw.text((left_padding, 0), today_time, font=font(12), fill="white")
 
 
 def show_text_message(device):
