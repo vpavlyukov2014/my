@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/examples/my.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/my.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/wifi_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/wifi_level.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,23 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/wifi_level.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="67" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="11" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/my.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="488">
+              <caret line="71" column="24" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -355,8 +342,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/my.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="488">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
