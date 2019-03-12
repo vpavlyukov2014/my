@@ -43,7 +43,7 @@ def wifi_siganl(device, draw):
     s = 2
     signal_range = 5
     x_start = device.width - ((w + s) * (signal_range) - 1)
-    desc_width = len(wifi_desc) * 8
+    desc_width = len(wifi_desc) * 6
     desc_x_start = x_start - (desc_width + 5)
     text(draw, (desc_x_start, 0), wifi_desc, fill="white", font=proportional(LCD_FONT) )
     for i in range(0, signal_range):
