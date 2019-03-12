@@ -27,7 +27,7 @@ def main():
 
 
 def clock(device, draw):
-    left_padding = 10
+    left_padding = 0
     now = datetime.datetime.now()
     today_time = now.strftime("%d %B %Y  %A  %H:%M:%S ")
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
@@ -44,7 +44,7 @@ def wifi_siganl(device, draw):
     signal_range = 5
     x_start = device.width - ((w + s) * (signal_range) - 1)
     desc_width = len(wifi_desc) * 5
-    desc_x_start = x_start - (desc_width + 0)
+    desc_x_start = x_start - (desc_width + 5)
     text(draw, (desc_x_start, 0), wifi_desc, fill="white", font=proportional(LCD_FONT) )
     for i in range(0, signal_range):
         if i < wifi_level:
