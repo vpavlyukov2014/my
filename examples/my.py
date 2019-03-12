@@ -36,17 +36,16 @@ def clock(device, draw):
 def wifi_siganl(device, draw):
     wifi_info = get_wifi_info()
     wifi_level = wifi_info[0]
-    wifi_desc = "{}[{}]".format(wifi_info[1], wifi_info[2])
-
-    level_text = "Wifi level is {}".format(wifi_level)
-    text(draw, (0, 20), level_text, fill="white", font=proportional(LCD_FONT) )
-    text(draw, (0, 30), wifi_desc, fill="white", font=proportional(LCD_FONT) )
+    wifi_desc = "{}/{}Г".format(wifi_info[1], wifi_info[2])
     y_start = 0
     h = 2
     w = 2
     s = 2
     signal_range = 5
     x_start = device.width - ((w + s) * (signal_range) - 1)
+    desc_width = len(wifi_desc) * 8
+    desc_x_start = x_start - (desc_width + 5)
+    text(draw, (desc_x_start, 0), wifi_desc, fill="white", font=proportional(LCD_FONT) )
     for i in range(0, signal_range):
         if i < wifi_level:
             color = "white"
