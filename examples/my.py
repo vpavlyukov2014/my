@@ -52,9 +52,9 @@ def progress_bar(device, draw, completed):
     draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), fill=color1)
 
     d2_x1 = d1_x2
-    d2_y1 = d1_y1 + h2
+    d2_y1 = d1_y1 - h2
     d2_x2 = d1_x2 + w2
-    d2_y2 = d1_y2 - h2
+    d2_y2 = d1_y2 + h2
     draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), fill=color2)
 
 
