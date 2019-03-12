@@ -24,7 +24,7 @@ def main():
         with canvas(device) as draw:
             wifi_siganl(device, draw)
             clock(device, draw)
-            progress_bar(device. draw, completed)
+            progress_bar(device, draw, completed)
             time.sleep(1)
 
 
@@ -50,7 +50,7 @@ def progress_bar(device, draw, completed):
     d1_y2 = y_pad + h
     draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), fill=color1)
 
-    
+
 def wifi_siganl(device, draw):
     wifi_info = get_wifi_info()
     wifi_level = wifi_info[0]
