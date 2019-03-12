@@ -3,10 +3,8 @@
 
 import os
 import time
-import random
 import datetime
 import locale
-from PIL import ImageFont
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 from demo_opts import get_device
@@ -16,15 +14,14 @@ from luma.core.legacy.font import proportional, LCD_FONT
 import sys
 import subprocess
 import re
+import math
 
 
 def main():
-    wifi_level = 2
     device = get_device()
     for _ in range(200):
-        wifi_level = random.randint(0, 5)
         with canvas(device) as draw:
-            wifi_siganl(device, draw, wifi_level)
+            wifi_siganl(device, draw)
             clock(device, draw)
             time.sleep(1)
 
@@ -36,13 +33,9 @@ def clock(device, draw):
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
-
-
-
-
-def wifi_siganl(device, draw, wifi_level):
-    level = get_wifi_level()
-    text(draw, (0, 20),level , fill="white", font=proportional(LCD_FONT) )
+def wifi_siganl(device, draw):
+    wifi_level = wifi_level_desc
+    text(draw, (0, 20), wifi_level, fill="white", font=proportional(LCD_FONT) )
     y_start = 0
     h = 2
     w = 2
@@ -66,10 +59,15 @@ def get_wifi_level():
     proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
     out, err = proc.communicate()
     result = re.search('(?<=Signal level=-)(\d+)', out).group(0)
-    return result
+    result_val = int(result)
+    if math.isnan(result_val):
+        return 0
+    else:
+        return result_val
 
 
-def signal_level_to_desc(level):
+def wifi_level_desc():
+   level = get_wifi_level
    if level == 0:
        return 0
    elif level <= 70:
