@@ -13,6 +13,9 @@ from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
+import sys
+import subprocess
+import re
 
 
 def main():
@@ -23,7 +26,6 @@ def main():
         with canvas(device) as draw:
             wifi_siganl(device, draw, wifi_level)
             clock(device, draw)
-            # show_text_message(device, draw)
             time.sleep(1)
 
 
@@ -34,18 +36,12 @@ def clock(device, draw):
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
-def show_text_message(device, draw):
-    msg = 'sdfsdfsfdsdfssdfsdfsdf sdfsdfs dfs df sdf sd fs df sdf sd fs dfsdfsdfsdf'
-    # device, msg, y_offset=0, fill=None, font=None,scroll_delay=0.03
-    # show_message(device, msg, y_offset=30, fill="white", font=prop_font, scroll_delay=0.03)
-    # show_message(device, msg, y_offset=20, fill="white", font=proportional(LCD_FONT), scroll_delay=1)
-    for left_padding in range(30):
-        text(draw, (left_padding, 20 ), msg, fill="white", font=proportional(LCD_FONT) )
-        time.sleep(1)
+
 
 
 
 def wifi_siganl(device, draw, wifi_level):
+    text(draw, (0, 20), get_wifi_level, fill="white", font=proportional(LCD_FONT) )
     y_start = 0
     h = 2
     w = 2
@@ -57,12 +53,36 @@ def wifi_siganl(device, draw, wifi_level):
             color = "white"
         else:
             color = "red"
-
         x0 = x_start + (w + s)*i
         y0 = y_start
         x1 = x_start + w + (s + w)*i
         y1 = h * i + 1
         draw.rectangle((x0, y0, x1, y1), fill=color)
+
+
+def get_wifi_level():
+    interface = "wlan0"
+    proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
+    out, err = proc.communicate()
+    result = re.search('(?<=Signal level=-)(\d+)', out).group(0)
+    return int(result)
+
+
+def signal_level_to_desc(level):
+   if level == 0:
+       return 0
+   elif level <= 70:
+       return 5
+   elif 70 > level < 80:
+       return 4
+   elif 80 >= level < 90:
+       return 3
+   elif 90 >= level < 100:
+       return 2
+   elif 100 >= level < 110:
+       return 1
+   else:
+       return 0
 
 
 if __name__ == "__main__":
