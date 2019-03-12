@@ -42,7 +42,7 @@ def progress_bar(device, draw, completed):
     color2 = 'white'
     y_pad = 20
     display_w = device.width
-    h = 4
+    h = 12
 
     d1_x1 = 0
     d1_y1 = y_pad
