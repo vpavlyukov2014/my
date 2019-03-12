@@ -34,9 +34,13 @@ def clock(device, draw):
 
 
 def wifi_siganl(device, draw):
-    wifi_level = wifi_level_desc()
+    wifi_info = get_wifi_info()
+    wifi_level = wifi_info[0]
+    wifi_desc = "{}[{}]".format(wifi_info[1], wifi_info[2])
+
     level_text = "Wifi level is {}".format(wifi_level)
     text(draw, (0, 20), level_text, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (0, 30), wifi_desc, fill="white", font=proportional(LCD_FONT) )
     y_start = 0
     h = 2
     w = 2
@@ -55,20 +59,23 @@ def wifi_siganl(device, draw):
         draw.rectangle((x0, y0, x1, y1), fill=color)
 
 
-def get_wifi_level():
+def get_wifi_info():
     interface = "wlan0"
     proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
     out, err = proc.communicate()
+    freq = re.search('(?<=Frequency:)(\d)', out).group(0)
+    net_name = re.search('(?<=ESSID:")(.+)(")', out).group(0)
     result = re.search('(?<=Signal level=-)(\d+)', out).group(0)
     result_val = int(result)
     if math.isnan(result_val):
-        return 0
+        level = 0
     else:
-        return result_val
+        level = result_val
+    level_norm = wifi_level_desc(level)
+    return [level_norm, net_name, freq]
 
 
-def wifi_level_desc():
-   level = get_wifi_level()
+def wifi_level_desc(level):
    if level == 0:
        return 0
    elif level <= 70:
