@@ -18,13 +18,12 @@ import math
 
 
 def main():
-    completed = 30
     device = get_device()
-    for _ in range(200):
+    for i in range(100):
         with canvas(device) as draw:
             wifi_siganl(device, draw)
             clock(device, draw)
-            progress_bar(device, draw, completed)
+            progress_bar(device, draw, i)
             time.sleep(1)
 
 
@@ -42,7 +41,7 @@ def progress_bar(device, draw, completed):
     color2 = 'white'
     y_pad = 20
     display_w = device.width
-    h = 12
+    h = 4
 
     d1_x1 = 0
     d1_y1 = y_pad
