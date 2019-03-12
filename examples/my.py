@@ -34,7 +34,7 @@ def clock(device, draw):
 
 
 def wifi_siganl(device, draw):
-    wifi_level = wifi_level_desc
+    wifi_level = wifi_level_desc()
     text(draw, (0, 20), wifi_level, fill="white", font=proportional(LCD_FONT) )
     y_start = 0
     h = 2
@@ -67,7 +67,7 @@ def get_wifi_level():
 
 
 def wifi_level_desc():
-   level = get_wifi_level
+   level = get_wifi_level()
    if level == 0:
        return 0
    elif level <= 70:
