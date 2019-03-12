@@ -36,7 +36,7 @@ def clock(device, draw):
 def wifi_siganl(device, draw):
     wifi_info = get_wifi_info()
     wifi_level = wifi_info[0]
-    wifi_desc = "{}/{}Г".format(wifi_info[1], wifi_info[2])
+    wifi_desc = "{}/{}G".format(wifi_info[1], wifi_info[2])
     y_start = 0
     h = 2
     w = 2
