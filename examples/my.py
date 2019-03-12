@@ -48,19 +48,21 @@ def progress_bar(device, draw, completed):
     d1_y1 = y_pad
     d1_x2 = (display_w * completed)/100 - w2
     d1_y2 = y_pad + h
-    draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=color1, fill='red')
 
     d2_x1 = d1_x2
     d2_y1 = d1_y1 - h2
     d2_x2 = d1_x2 + w2
     d2_y2 = d1_y2 + h2
-    draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), fill=color2)
 
     d3_x1 = d2_x2 + 1
     d3_y1 = d1_y1
     d3_x2 = display_w - 1
     d3_y2 = d1_y2
+
+    draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), fill=color1)
     draw.rectangle((d3_x1, d3_y1, d3_x2, d3_y2), outline=color1, fill="black")
+    draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), fill=color2)
+
 
 
 def wifi_siganl(device, draw):
