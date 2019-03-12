@@ -64,7 +64,7 @@ def get_wifi_info():
     proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
     out, err = proc.communicate()
     freq = re.search('(?<=Frequency:)(\d)', out).group(0)
-    net_name = re.search('(?<=ESSID:")(.+)(")', out).group(0)
+    net_name = re.math('(?<=ESSID:")(.+)(")', out).group(1)
     result = re.search('(?<=Signal level=-)(\d+)', out).group(0)
     result_val = int(result)
     if math.isnan(result_val):
