@@ -35,7 +35,8 @@ def clock(device, draw):
 
 def wifi_siganl(device, draw):
     wifi_level = wifi_level_desc()
-    text(draw, (0, 20), wifi_level, fill="white", font=proportional(LCD_FONT) )
+    level_text = "Wifi level is {}".format(wifi_level)
+    text(draw, (0, 20), level_text, fill="white", font=proportional(LCD_FONT) )
     y_start = 0
     h = 2
     w = 2
