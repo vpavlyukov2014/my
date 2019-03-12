@@ -38,7 +38,7 @@ def clock(device, draw):
 def progress_bar(device, draw, completed):
     h2 = 1
     w2 = 2
-    color1 = "cyan"
+    color1 = "red"
     color2 = 'white'
     y_pad = 20
     display_w = device.width
