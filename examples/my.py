@@ -54,7 +54,7 @@ def progress_bar(device, draw, completed):
     d2_x2 = d1_x2 + w2
     d2_y2 = d1_y2 + h2
 
-    d3_x1 = d2_x2 + 1
+    d3_x1 = d2_x2
     d3_y1 = d1_y1
     d3_x2 = display_w - 1
     d3_y2 = d1_y2
