@@ -66,7 +66,7 @@ def get_wifi_level():
     proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
     out, err = proc.communicate()
     result = re.search('(?<=Signal level=-)(\d+)', out).group(0)
-    return int(result)
+    return result
 
 
 def signal_level_to_desc(level):
