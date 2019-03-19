@@ -94,6 +94,14 @@ def draw_status_sym(device, draw, i):
     if status_val == 'play':
         d1_x1 = started_x
         d1_y1 = started_y
+        d1_x3 = started_x
+        d1_y3 = started_y - zh
+        d1_x2 = started_x + wx*3
+        d1_y2 = started_y - zh/2
+        draw.polygon([(d1_x1, d1_y1), (d1_x2, d1_y2), (d1_x3, d1_y3)], outline=color, fill='red')
+    elif status_val == 'stop':
+        d1_x1 = started_x
+        d1_y1 = started_y
         d1_x2 = d1_x1 + zh
         d1_y2 = d1_y1 - zh
         draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=color, fill='red')
@@ -102,12 +110,12 @@ def draw_status_sym(device, draw, i):
         d1_y1 = started_y
         d1_x2 = d1_x1 + wx
         d1_y2 = d1_y1 - zh
-        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=flash_color, fill="black")
+        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=flash_color, fill="red")
         d2_x1 = d1_x1 + wx*2
         d2_y1 = d1_y1
         d2_x2 = d2_x1 + wx
         d2_y2 = d1_y2
-        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="black")
+        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="red")
 
 
 def secs_to_time(secs):
