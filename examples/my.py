@@ -30,7 +30,7 @@ def main():
 
 def volumeo_info():
     info = {
-        "status":"play", #"play" "pause" "stop"
+        "status":"pause", #"play" "pause" "stop"
         "position":0,
         "title":"Привет заголовок песни",
         "artist":"Группа Браво",
