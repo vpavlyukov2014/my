@@ -61,7 +61,7 @@ def track_info(device, draw):
     left_padding = 0
     artist_name_data = artist()
     artist_name  = (artist_name_data[:31] + '..') if len(artist_name_data) > 33 else artist_name_data
-    info_text = "{:33s}  {}/{}/{}".format(artist_name, bitrate(), bitdepth(), track_type())
+    info_text = "{:35s}  {}/{}/{}".format(artist_name, bitrate(), bitdepth(), track_type())
     text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
 
 
