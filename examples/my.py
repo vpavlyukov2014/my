@@ -84,7 +84,7 @@ def secs_to_time(secs):
   secs = secs % 60
   if (hours > 99):
      hours = 99
-  time_text = "{:2d}:{:2d}:{:2d}".format(hours, mins, secs)
+  time_text = "{:02d}:{:02d}:{:02d}".format(hours, mins, secs)
   return time_text
 
 
