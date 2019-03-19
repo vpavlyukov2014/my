@@ -1,20 +1,19 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 import time
 import datetime
 import locale
+import subprocess
+import re
+import math
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
-import sys
-import subprocess
-import re
-import math
+
 
 
 def main():
@@ -22,12 +21,117 @@ def main():
     for i in range(100):
         with canvas(device) as draw:
             wifi_siganl(device, draw)
-            clock(device, draw)
+            clock(draw)
+            track_info(device, draw)
             progress_bar(device, draw, i)
             time.sleep(1)
 
 
-def clock(device, draw):
+def volumeo_info():
+    info = {
+        "status":"play",
+        "position":0,
+        "title":"Привет заголовок песни",
+        "artist":"Группа Браво",
+        "album":"Мой альбом",
+        "albumart":"/albumart?web=Baustelle/La%20malavita/extralarge&path=%2FNAS%2FMusic%2FBaustelle%20-%20La%20Malavita",
+        "uri":"mnt/NAS/Music/Baustelle - La Malavita/02 la guerra è finita.mp3",
+        "trackType":"mp3",
+        "seek":4224,
+        "duration":262,
+        "samplerate":"44.1 KHz",
+        "bitdepth":"24 bit",
+        "channels":2,
+        "random": None,
+        "repeat": None,
+        "repeatSingle": False,
+        "consume": False,
+        "volume":41,
+        "mute": False,
+        "stream":"mp3",
+        "updatedb": False,
+        "volatile": False,
+        "service":"mpd"
+    }
+    return info
+
+
+def track_info(device, draw):
+    h = 20
+    left_padding = 0
+    bitrate = bitrate()
+    bitdepth = bitdepth()
+    track_type = track_type()
+    artist = artist()
+
+    info_text = "{}    {}/{}  {}".format(artist, bitrate, bitdepth, track_type)
+    text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
+
+
+def music_timer(device, draw, time_play, time_all):
+    return
+
+
+def time_elapsed():
+    info = volumeo_info()
+    return (int(info["seek"])/1000)
+
+
+def time_total():
+    info = volumeo_info()
+    return (int(info["duration"]))
+
+
+def status():
+    info = volumeo_info()
+    return info["status"]
+
+
+def title():
+    info = volumeo_info()
+    return info["title"]
+
+
+def artist():
+    info = volumeo_info()
+    return info["artist"]
+
+
+def track_type():
+    info = volumeo_info()
+    return info["trackType"]
+
+
+def bitrate():
+    info = volumeo_info()
+    return info["samplerate"]
+
+
+def bitdepth():
+    info = volumeo_info()
+    return info["bitdepth"]
+
+def stream():
+    info = volumeo_info()
+    return info["stream"]
+
+
+def random_play():
+    info = volumeo_info()
+    return info["random"]
+
+
+def repeat_play():
+    info = volumeo_info()
+    return info["repeat"]
+
+
+def repeat_one():
+    info = volumeo_info()
+    return info["repeatSingle"]
+
+
+def clock(draw):
     left_padding = 0
     now = datetime.datetime.now()
     today_time = now.strftime("%d %B %Y  %A  %H:%M:%S ")
@@ -61,7 +165,6 @@ def progress_bar(device, draw, completed):
     draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), fill=color1)
     draw.rectangle((d3_x1, d3_y1, d3_x2, d3_y2), outline=color1, fill="black")
     draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), fill=color2)
-
 
 
 def wifi_siganl(device, draw):
