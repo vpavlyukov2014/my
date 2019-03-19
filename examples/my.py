@@ -73,8 +73,11 @@ def music_timer(device, draw):
     elapsed = time_elapsed()
     total_text = secs_to_time(total)
     elapsed_text = secs_to_time(elapsed)
-    info_text = "{}    {}".format(elapsed_text, total_text)
+    info_text = elapsed_text
     text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
+    
+    x_start = device.width - left_padding - len(total_text) * 6
+    text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
 
 def secs_to_time(secs):
