@@ -195,7 +195,8 @@ def clock(draw):
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
-def progress_bar(device, draw, completed):
+def progress_bar(device, draw):
+    completed = (time_elapsed() * 100) / time_total()
     h2 = 1
     w2 = 2
     color1 = "red"
