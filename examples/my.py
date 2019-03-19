@@ -98,7 +98,7 @@ def draw_status_sym(device, draw, i):
         d1_y3 = started_y - zh
         d1_x2 = started_x + wx*3
         d1_y2 = started_y - zh/2
-        draw.polygon([(d1_x1, d1_y1), (d1_x2, d1_y2), (d1_x3, d1_y3)], outline=color, fill='red')
+        draw.polygon([(d1_x1, d1_y1), (d1_x2, d1_y2), (d1_x3, d1_y3)], fill=color)
     elif status_val == 'stop':
         d1_x1 = started_x
         d1_y1 = started_y
