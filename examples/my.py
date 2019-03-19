@@ -120,9 +120,9 @@ def draw_status_sym(device, draw, i):
 
 
 def draw_title(device, draw):
-    m_title = m_title()
+    m_title_text = m_title()
     h = 40
-    text(draw, (0, h), m_title, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (0, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
