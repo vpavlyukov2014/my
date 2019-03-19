@@ -25,7 +25,10 @@ def main():
             track_info(device, draw)
             progress_bar(device, draw, i)
             music_timer(device, draw)
+            draw_status_sym(device, draw, 'white')
             time.sleep(1)
+            draw_status_sym(device, draw, 'red')
+
 
 
 def volumeo_info():
@@ -78,6 +81,8 @@ def music_timer(device, draw):
     x_start = device.width - left_padding - len(total_text) * 6 + 6
     text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
+def draw_status_sym(device, draw, color):
+    h = 32
     wx = 2
     zh = 10
     started_x = device.width/2 - 3*wx
@@ -89,13 +94,13 @@ def music_timer(device, draw):
         d1_y1 = started_y
         d1_x2 = d1_x1 + wx
         d1_y2 = d1_y1 - zh
-        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline='white', fill="black")
+        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=color, fill="black")
 
         d2_x1 = d1_x1 + wx*2
         d2_y1 = d1_y1
         d2_x2 = d2_x1 + wx
         d2_y2 = d1_y2
-        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline='white', fill="black")
+        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=color, fill="black")
 
 
 def secs_to_time(secs):
