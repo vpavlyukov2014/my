@@ -85,8 +85,8 @@ def draw_status_sym(device, draw, i):
     else:
         flash_color = 'red'
     h = 32
-    wx = 2
-    zh = 10
+    wx = 3
+    zh = 14
     started_x = device.width/2 - 3*wx
     started_y = h + zh + 2
 
