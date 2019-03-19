@@ -25,13 +25,7 @@ def main():
             track_info(device, draw)
             progress_bar(device, draw, i)
             music_timer(device, draw)
-
-            if i % 2 == 0:
-                flash_color = 'white'
-            else:
-                flash_color = 'red'
-            draw_status_sym(device, draw, flash_color)
-            
+            draw_status_sym(device, draw, i)
             time.sleep(1)
 
 def volumeo_info():
@@ -84,7 +78,11 @@ def music_timer(device, draw):
     x_start = device.width - left_padding - len(total_text) * 6 + 6
     text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
-def draw_status_sym(device, draw, color):
+def draw_status_sym(device, draw, i):
+    if i % 2 == 0:
+        flash_color = 'white'
+    else:
+        flash_color = 'red'
     h = 32
     wx = 2
     zh = 10
@@ -95,15 +93,20 @@ def draw_status_sym(device, draw, color):
     if status_val == 'play':
         d1_x1 = started_x
         d1_y1 = started_y
+        d1_x2 = d1_x1 + zh
+        d1_y2 = d1_y1 - zh
+        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=flash_color, fill="black")
+    elif status_val == 'pause':
+        d1_x1 = started_x
+        d1_y1 = started_y
         d1_x2 = d1_x1 + wx
         d1_y2 = d1_y1 - zh
-        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=color, fill="black")
-
+        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=flash_color, fill="black")
         d2_x1 = d1_x1 + wx*2
         d2_y1 = d1_y1
         d2_x2 = d2_x1 + wx
         d2_y2 = d1_y2
-        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=color, fill="black")
+        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="black")
 
 
 def secs_to_time(secs):
