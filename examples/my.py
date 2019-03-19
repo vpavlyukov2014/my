@@ -32,7 +32,7 @@ def volumeo_info():
     info = {
         "status":"stop", #"play" "pause" "stop"
         "position":0,
-        "title":"Привет заголовок песни",
+        "title":"Привет заголовок песни очень длинный и предлинный как незнайчто",
         "artist":"Группа Браво",
         "album":"Мой альбом",
         "albumart":"/albumart?web=Baustelle/La%20malavita/extralarge&path=%2FNAS%2FMusic%2FBaustelle%20-%20La%20Malavita",
@@ -117,6 +117,11 @@ def draw_status_sym(device, draw, i):
         d2_y2 = d1_y2
         draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="red")
 
+
+def draw_title(device, draw):
+    text = title()
+    h = 40
+    text(draw, (0, h ), title(), fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
