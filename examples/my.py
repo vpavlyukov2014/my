@@ -83,7 +83,7 @@ def music_timer(device, draw):
     started_y = h
     zh = 10
 
-    if (status=="play"):
+    if status == 'play':
         d1_x1 = started_x
         d1_y1 = started_y
         d1_x2 = d1_x1 + wx
