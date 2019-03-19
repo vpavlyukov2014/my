@@ -32,7 +32,7 @@ def volumeo_info():
         "status":"play",
         "position":0,
         "title":"Привет заголовок песни",
-        "artist":"Группа Браво",
+        "artist":"Группа Браво3456789012345",
         "album":"Мой альбом",
         "albumart":"/albumart?web=Baustelle/La%20malavita/extralarge&path=%2FNAS%2FMusic%2FBaustelle%20-%20La%20Malavita",
         "uri":"mnt/NAS/Music/Baustelle - La Malavita/02 la guerra è finita.mp3",
@@ -59,7 +59,7 @@ def volumeo_info():
 def track_info(device, draw):
     h = 12
     left_padding = 0
-    info_text = "{}    {}/{}  {}".format(artist(), bitrate(), bitdepth(), track_type())
+    info_text = "{:20s}    {}/{}  {}".format(artist(), bitrate(), bitdepth(), track_type())
     text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
 
 
