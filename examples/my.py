@@ -59,10 +59,10 @@ def volumeo_info():
 def track_info(device, draw):
     h = 20
     left_padding = 0
-    bitrate = bitrate()
-    bitdepth = bitdepth()
-    track_type = track_type()
-    artist = artist()
+    # bitrate = bitrate()
+    # bitdepth = bitdepth()
+    # track_type = track_type()
+    # artist = artist()
 
     info_text = "{}    {}/{}  {}".format(artist, bitrate, bitdepth, track_type)
     text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
