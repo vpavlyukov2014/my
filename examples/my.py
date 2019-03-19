@@ -120,9 +120,9 @@ def draw_status_sym(device, draw, i):
 
 
 def draw_title(device, draw):
-    text = title()
+    m_title = m_title()
     h = 40
-    text(draw, (0, h ), text, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (0, h), m_title, fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
@@ -150,7 +150,7 @@ def status():
     return info["status"]
 
 
-def title():
+def m_title():
     info = volumeo_info()
     return info["title"]
 
