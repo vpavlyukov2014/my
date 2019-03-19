@@ -28,7 +28,7 @@ def main():
             draw_status_sym(device, draw, 'white')
             time.sleep(1)
             draw_status_sym(device, draw, 'red')
-
+            time.sleep(1)
 
 
 def volumeo_info():
