@@ -25,12 +25,14 @@ def main():
             track_info(device, draw)
             progress_bar(device, draw, i)
             music_timer(device, draw)
-            draw_status_sym(device, draw, 'white')
-            time.sleep(1)
-        with canvas(device) as draw:
-            draw_status_sym(device, draw, 'red')
-            time.sleep(1)
 
+            if i % 2 == 0:
+                flash_color = 'white'
+            else:
+                flash_color = 'red'
+            draw_status_sym(device, draw, flash_color)
+            
+            time.sleep(1)
 
 def volumeo_info():
     info = {
