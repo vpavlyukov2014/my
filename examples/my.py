@@ -57,7 +57,7 @@ def volumeo_info():
     return info
 
 
-def track_info(draw):
+def track_info(device, draw):
     h = 12
     left_padding = 0
     artist_name_data = artist()
