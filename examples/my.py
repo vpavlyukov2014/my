@@ -79,6 +79,7 @@ def music_timer(device, draw):
     text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
 def draw_status_sym(device, draw, i):
+    color = 'white'
     if i % 2 == 0:
         flash_color = 'white'
     else:
@@ -95,7 +96,7 @@ def draw_status_sym(device, draw, i):
         d1_y1 = started_y
         d1_x2 = d1_x1 + zh
         d1_y2 = d1_y1 - zh
-        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=flash_color, fill="black")
+        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=color, fill='red')
     elif status_val == 'pause':
         d1_x1 = started_x
         d1_y1 = started_y
