@@ -122,7 +122,11 @@ def draw_status_sym(device, draw, i):
 def draw_title(device, draw, i):
     m_title_text = m_title()
     h = device.height - 10
-    text(draw, (i, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
+    max_d = len(m_title_text) * 6 - device.width
+    if max_d > 0:
+        text(draw, (- i, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
+    else:
+        text(draw, (0, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
