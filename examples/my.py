@@ -119,10 +119,10 @@ def draw_status_sym(device, draw, i):
         draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="red")
 
 
-def draw_title(device, draw):
+def draw_title(device, draw, i):
     m_title_text = m_title()
     h = device.height - 10
-    text(draw, (0, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (i, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
