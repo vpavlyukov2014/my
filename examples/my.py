@@ -57,7 +57,7 @@ def volumeo_info():
 
 
 def track_info(device, draw):
-    h = 20
+    h = 12
     left_padding = 0
     # bitrate = bitrate()
     # bitdepth = bitdepth()
@@ -143,7 +143,7 @@ def progress_bar(device, draw, completed):
     w2 = 2
     color1 = "red"
     color2 = 'white'
-    y_pad = 20
+    y_pad = 25
     display_w = device.width
     h = 4
 
