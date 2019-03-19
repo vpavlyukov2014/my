@@ -67,7 +67,7 @@ def track_info(device, draw):
 
 
 def music_timer(device, draw):
-    h = 29
+    h = 32
     left_padding = 0
     total = time_total()
     elapsed = time_elapsed()
