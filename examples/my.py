@@ -24,12 +24,13 @@ def main():
             clock(draw)
             track_info(device, draw)
             progress_bar(device, draw, i)
+            music_timer(device, draw)
             time.sleep(1)
 
 
 def volumeo_info():
     info = {
-        "status":"play",
+        "status":"play", #"play" "pause" "stop"
         "position":0,
         "title":"Привет заголовок песни",
         "artist":"Группа Браво",
@@ -56,7 +57,7 @@ def volumeo_info():
     return info
 
 
-def track_info(device, draw):
+def track_info(draw):
     h = 12
     left_padding = 0
     artist_name_data = artist()
@@ -65,8 +66,26 @@ def track_info(device, draw):
     text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
 
 
-def music_timer(device, draw, time_play, time_all):
-    return
+def music_timer(device, draw):
+    h = 29
+    left_padding = 0
+    total = time_total()
+    elapsed = time_elapsed()
+    total_text = secs_to_time(total)
+    elapsed_text = secs_to_time(elapsed)
+    info_text = "{}    {}",format(elapsed_text, total_text)
+    text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
+
+
+def secs_to_time(secs):
+  hours = secs / 3600
+  secs = secs % 3600
+  mins = secs / 60
+  secs = secs % 60
+  if (hours > 99):
+     hours = 99
+  time_text = "{:2d}:{:2d}:{:2d}".format(hours, mins, secs)
+  return time_text
 
 
 def time_elapsed():
