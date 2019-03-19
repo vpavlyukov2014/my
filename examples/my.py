@@ -79,9 +79,9 @@ def music_timer(device, draw):
     text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
     wx = 2
-    started_x = device.width/2 - 3*wx
-    started_y = h
     zh = 10
+    started_x = device.width/2 - 3*wx
+    started_y = h - zh - 2
 
     status_val = status()
     if status_val == 'play':
