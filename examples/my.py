@@ -27,6 +27,7 @@ def main():
             music_timer(device, draw)
             draw_status_sym(device, draw, 'white')
             time.sleep(1)
+        with canvas(device) as draw:
             draw_status_sym(device, draw, 'red')
             time.sleep(1)
 
