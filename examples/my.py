@@ -23,7 +23,7 @@ def main():
             wifi_siganl(device, draw)
             # clock(draw)
             # track_info(device, draw)
-            progress_bar(device, draw)
+            progress_bar(device, draw, i)
             # music_timer(device, draw)
             # draw_status_sym(device, draw, i)
             # draw_title(device, draw, i)
@@ -204,8 +204,8 @@ def clock(draw):
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
-def progress_bar(device, draw):
-    completed = (time_elapsed() * 100) / time_total()
+def progress_bar(device, draw, i):
+    completed = i #(time_elapsed() * 100) / time_total()
     h2 = 1
     w2 = 2
     color1 = "red"
