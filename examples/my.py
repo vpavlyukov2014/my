@@ -8,7 +8,9 @@ import subprocess
 import re
 import math
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
-
+from PIL import ImageFont, Image, ImageDraw
+from luma.core.render import canvas
+from luma.core.image_composition import ImageComposition, ComposableImage
 from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.legacy import text
@@ -18,15 +20,36 @@ from luma.core.legacy.font import proportional, LCD_FONT
 
 def main():
     device = get_device()
-    for i in range(100):
-        with canvas(device) as draw:
-            wifi_siganl(device, draw)
-            clock(draw)
-            track_info(device, draw)
-            progress_bar(device, draw, i)
-            music_timer(device, draw)
-            draw_status_sym(device, draw, i)
-            draw_title(device, draw, i)
+    image_composition = ImageComposition(device)
+
+    try:
+        while True:
+            synchroniser = Synchroniser()
+            ci_song = ComposableImage(TextImage(device, m_title()).image, position=((device.height - 10), 1))
+            song = Scroller(image_composition, ci_song, 100, synchroniser)
+            cycles = 0
+
+            while cycles < 3:
+                artist.tick()
+                song.tick()
+                time.sleep(0.025)
+                cycles = song.get_cycles()
+
+                with canvas(device, background=image_composition()) as draw:
+                    image_composition.refresh()
+                    draw.rectangle(device.bounding_box, outline="white")
+                    wifi_siganl(device, draw)
+                    clock(draw)
+                    track_info(device, draw)
+                    progress_bar(device, draw)
+                    music_timer(device, draw)
+                    draw_status_sym(device, draw)
+
+            del song
+
+    except KeyboardInterrupt:
+        pass
+
 
 def volumeo_info():
     info = {
@@ -118,14 +141,14 @@ def draw_status_sym(device, draw, i):
         draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="red")
 
 
-def draw_title(device, draw, i):
-    m_title_text = m_title()
-    h = device.height - 10
-    max_d = len(m_title_text) * 6 - device.width
-    if max_d > 0:
-        text(draw, (- i, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
-    else:
-        text(draw, (0, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
+# def draw_title(device, draw, i):
+#     m_title_text = m_title()
+#     h = device.height - 10
+#     max_d = len(m_title_text) * 6 - device.width
+#     if max_d > 0:
+#         text(draw, (- i, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
+#     else:
+#         text(draw, (0, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
@@ -290,6 +313,105 @@ def wifi_level_desc(level):
        return 1
    else:
        return 0
+
+
+class TextImage():
+    def __init__(self, device, dr_text):
+        h = 8
+        w = len(dr_text)*6
+        self.image = Image.new(device.mode, (w, h))
+        draw = ImageDraw.Draw(self.image)
+        text(draw, (0, 0 ), dr_text, fill="white", font=proportional(LCD_FONT) )
+        del draw
+        self.width = w
+        self.height = h
+
+
+class Synchroniser():
+    def __init__(self):
+        self.synchronised = {}
+
+    def busy(self, task):
+        self.synchronised[id(task)] = False
+
+    def ready(self, task):
+        self.synchronised[id(task)] = True
+
+    def is_synchronised(self):
+        for task in self.synchronised.iteritems():
+            if task[1] is False:
+                return False
+        return True
+
+
+class Scroller():
+    WAIT_SCROLL = 1
+    SCROLLING = 2
+    WAIT_REWIND = 3
+    WAIT_SYNC = 4
+
+    def __init__(self, image_composition, rendered_image, scroll_delay, synchroniser):
+        self.image_composition = image_composition
+        self.speed = 1
+        self.image_x_pos = 0
+        self.rendered_image = rendered_image
+        self.image_composition.add_image(rendered_image)
+        self.max_pos = rendered_image.width - image_composition().width
+        self.delay = scroll_delay
+        self.ticks = 0
+        self.state = self.WAIT_SCROLL
+        self.synchroniser = synchroniser
+        self.render()
+        self.synchroniser.busy(self)
+        self.cycles = 0
+        self.must_scroll = self.max_pos > 0
+
+    def __del__(self):
+        self.image_composition.remove_image(self.rendered_image)
+
+    def tick(self):
+
+        # Repeats the following sequence:
+        #  wait - scroll - wait - rewind -> sync with other scrollers -> wait
+        if self.state == self.WAIT_SCROLL:
+            if not self.is_waiting():
+                self.cycles += 1
+                self.state = self.SCROLLING
+                self.synchroniser.busy(self)
+
+        elif self.state == self.WAIT_REWIND:
+            if not self.is_waiting():
+                self.synchroniser.ready(self)
+                self.state = self.WAIT_SYNC
+
+        elif self.state == self.WAIT_SYNC:
+            if self.synchroniser.is_synchronised():
+                if self.must_scroll:
+                    self.image_x_pos = 0
+                    self.render()
+                self.state = self.WAIT_SCROLL
+
+        elif self.state == self.SCROLLING:
+            if self.image_x_pos < self.max_pos:
+                if self.must_scroll:
+                    self.render()
+                    self.image_x_pos += self.speed
+            else:
+                self.state = self.WAIT_REWIND
+
+    def render(self):
+        self.rendered_image.offset = (self.image_x_pos, 0)
+
+    def is_waiting(self):
+        self.ticks += 1
+        if self.ticks > self.delay:
+            self.ticks = 0
+            return False
+        return True
+
+    def get_cycles(self):
+        return self.cycles
+
 
 
 if __name__ == "__main__":
