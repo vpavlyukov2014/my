@@ -22,12 +22,11 @@ def main():
         with canvas(device) as draw:
             # wifi_siganl(device, draw)
             # clock(draw)
-            track_info(device, draw)
-            progress_bar(device, draw)
-            music_timer(device, draw)
-            draw_status_sym(device, draw, i)
+            # track_info(device, draw)
+            # progress_bar(device, draw)
+            # music_timer(device, draw)
+            # draw_status_sym(device, draw, i)
             draw_title(device, draw, i)
-            # time.sleep(0.025)
 
 def volumeo_info():
     info = {
