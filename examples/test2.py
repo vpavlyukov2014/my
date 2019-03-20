@@ -25,8 +25,8 @@ titles = [
 
 class TextImage():
     def __init__(self, device, text):
-        with canvas(device) as draw:
-            w, h = draw.textsize(text, font=proportional(LCD_FONT))
+        h = 8
+        w = len(text)*6
         self.image = Image.new(device.mode, (w, h))
         draw = ImageDraw.Draw(self.image)
         text(draw, (0, 0 ), text, fill="white", font=proportional(LCD_FONT) )
