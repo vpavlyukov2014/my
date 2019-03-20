@@ -16,10 +16,7 @@ from luma.core.render import canvas
 from luma.core.image_composition import ImageComposition, ComposableImage
 
 titles = [
-    ("Bridge over troubled water", "Simon & Garfunkel"),
-    ("Up", "R.E.M."),
-    ("Wild Child", "Lou Reed & The Velvet Underground"),
-    ("(Shake Shake Shake) Shake your body", "KC & The Sunshine Band"),
+    ("Bridge over troubled water wdfwef wefwef wef wefwef wef wef", "Simon & Garfunkelw wefwe fw efwe fwe fw efwefwe")
 ]
 
 
