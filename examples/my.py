@@ -21,7 +21,7 @@ def main():
     for i in range(100):
         with canvas(device) as draw:
             wifi_siganl(device, draw)
-            # clock(draw)
+            clock(draw)
             # track_info(device, draw)
             progress_bar(device, draw, i)
             # music_timer(device, draw)
