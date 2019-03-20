@@ -14,6 +14,9 @@ from PIL import ImageFont, Image, ImageDraw
 from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.image_composition import ImageComposition, ComposableImage
+from luma.core.legacy import text
+from luma.core.legacy.font import proportional, LCD_FONT
+
 
 titles = [
     ("Bridge over troubled water wdfwef wefwef wef wefwef wef wef", "Simon & Garfunkelw wefwe fw efwe fwe fw efwefwe")
@@ -23,10 +26,11 @@ titles = [
 class TextImage():
     def __init__(self, device, text, font):
         with canvas(device) as draw:
-            w, h = draw.textsize(text, font)
+            w, h = draw.textsize(text, font=proportional(LCD_FONT))
         self.image = Image.new(device.mode, (w, h))
         draw = ImageDraw.Draw(self.image)
         draw.text((0, 0), text, font=font, fill="white")
+        text(draw, (0, 0 ), text, fill="white", font=proportional(LCD_FONT) )
         del draw
         self.width = w
         self.height = h
@@ -118,20 +122,13 @@ class Scroller():
         return self.cycles
 
 
-def make_font(name, size):
-    font_path = os.path.abspath(os.path.join(
-        os.path.dirname(__file__), 'fonts', name))
-    return ImageFont.truetype(font_path, size)
 
 # ------- main
 
 
 device = get_device()
 
-if device.height >= 16:
-    font = make_font("code2000.ttf", 12)
-else:
-    font = make_font("pixelmix.ttf", 8)
+
 
 image_composition = ImageComposition(device)
 
