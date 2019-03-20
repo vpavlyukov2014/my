@@ -20,12 +20,13 @@ from luma.core.legacy.font import proportional, LCD_FONT
 
 def main():
     device = get_device()
+    d_h = (device.height - 10)
     image_composition = ImageComposition(device)
 
     try:
         while True:
             synchroniser = Synchroniser()
-            ci_song = ComposableImage(TextImage(device, m_title()).image, position=((device.height - 10), 1))
+            ci_song = ComposableImage(TextImage(device, m_title()).image, position=(0, d_h))
             song = Scroller(image_composition, ci_song, 100, synchroniser)
             cycles = 0
 
@@ -36,7 +37,6 @@ def main():
 
                 with canvas(device, background=image_composition()) as draw:
                     image_composition.refresh()
-                    draw.rectangle(device.bounding_box, outline="white")
                     wifi_siganl(device, draw)
                     clock(draw)
                     track_info(device, draw)
