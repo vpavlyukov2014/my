@@ -24,12 +24,11 @@ titles = [
 
 
 class TextImage():
-    def __init__(self, device, text, font):
+    def __init__(self, device, text):
         with canvas(device) as draw:
             w, h = draw.textsize(text, font=proportional(LCD_FONT))
         self.image = Image.new(device.mode, (w, h))
         draw = ImageDraw.Draw(self.image)
-        draw.text((0, 0), text, font=font, fill="white")
         text(draw, (0, 0 ), text, fill="white", font=proportional(LCD_FONT) )
         del draw
         self.width = w
@@ -136,8 +135,8 @@ try:
     while True:
         for title in titles:
             synchroniser = Synchroniser()
-            ci_song = ComposableImage(TextImage(device, title[0], font).image, position=(0, 1))
-            ci_artist = ComposableImage(TextImage(device, title[1], font).image, position=(0, 30))
+            ci_song = ComposableImage(TextImage(device, title[0]).image, position=(0, 1))
+            ci_artist = ComposableImage(TextImage(device, title[1]).image, position=(0, 30))
             song = Scroller(image_composition, ci_song, 100, synchroniser)
             artist = Scroller(image_composition, ci_artist, 100, synchroniser)
             cycles = 0
