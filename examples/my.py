@@ -27,7 +27,7 @@ def main():
             music_timer(device, draw)
             draw_status_sym(device, draw, i)
             draw_title(device, draw, i)
-            time.sleep(0.3)
+            # time.sleep(0.025)
 
 def volumeo_info():
     info = {
