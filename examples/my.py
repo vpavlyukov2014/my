@@ -100,7 +100,7 @@ def music_timer(device, draw):
     x_start = device.width - left_padding - len(total_text) * 6 + 6
     text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
-def draw_status_sym(device, draw, i):
+def draw_status_sym(device, draw):
     color = 'white'
     if i % 2 == 0:
         flash_color = 'white'
@@ -139,15 +139,6 @@ def draw_status_sym(device, draw, i):
         d2_y2 = d1_y2
         draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="red")
 
-
-# def draw_title(device, draw, i):
-#     m_title_text = m_title()
-#     h = device.height - 10
-#     max_d = len(m_title_text) * 6 - device.width
-#     if max_d > 0:
-#         text(draw, (- i, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
-#     else:
-#         text(draw, (0, h), m_title_text, fill="white", font=proportional(LCD_FONT) )
 
 def secs_to_time(secs):
   hours = secs / 3600
@@ -226,8 +217,8 @@ def clock(draw):
     text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
 
 
-def progress_bar(device, draw, i):
-    completed = i #(time_elapsed() * 100) / time_total()
+def progress_bar(device, draw):
+    completed = (time_elapsed() * 100) / time_total()
     h2 = 1
     w2 = 2
     color1 = "red"
