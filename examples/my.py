@@ -20,8 +20,8 @@ def main():
     device = get_device()
     for i in range(100):
         with canvas(device) as draw:
-            wifi_siganl(device, draw)
-            clock(draw)
+            # wifi_siganl(device, draw)
+            # clock(draw)
             track_info(device, draw)
             progress_bar(device, draw)
             music_timer(device, draw)
