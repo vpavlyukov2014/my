@@ -37,9 +37,9 @@ def main():
 
                 with canvas(device, background=image_composition()) as draw:
                     image_composition.refresh()
-                    # wifi_siganl(device, draw)
-                    # clock(draw)
-                    # track_info(device, draw)
+                    wifi_siganl(device, draw)
+                    clock(draw)
+                    track_info(device, draw)
                     progress_bar(device, draw)
                     music_timer(device, draw)
                     draw_status_sym(device, draw)
