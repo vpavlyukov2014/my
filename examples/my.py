@@ -101,6 +101,7 @@ def music_timer(device, draw):
     text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
 
 def draw_status_sym(device, draw):
+    i = 0
     color = 'white'
     if i % 2 == 0:
         flash_color = 'white'
