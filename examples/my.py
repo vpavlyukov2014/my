@@ -42,7 +42,7 @@ def main():
                     image_composition.refresh()
                     wifi_siganl(device, draw, wifi)
                     clock(draw)
-                    track_info(device, draw, volumeo)
+                    track_info(draw, volumeo)
                     progress_bar(device, draw, volumeo)
                     music_timer(device, draw, volumeo)
                     draw_status_sym(device, draw, volumeo)
