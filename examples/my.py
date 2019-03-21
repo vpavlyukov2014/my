@@ -19,7 +19,6 @@ from wifi_info import Wifi
 
 def main():
     volumeo = Volumeo()
-    volumeo.refresh_info()
     wifi = Wifi()
 
     device = get_device()
@@ -57,10 +56,7 @@ def main():
 def track_info(draw, volumeo):
     h = 12
     left_padding = 0
-    artist_name_data = volumeo.artist()
-    artist_name  = (artist_name_data[:31] + '..') if len(artist_name_data) > 33 else artist_name_data
-    info_text = "{:35s}  {}/{}/{}".format(artist_name, volumeo.bitrate(), volumeo.bitdepth(), volumeo.track_type())
-    text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (left_padding, h ), volumeo.track_info, fill="white", font=proportional(LCD_FONT) )
 
 
 def music_timer(device, draw, volumeo):

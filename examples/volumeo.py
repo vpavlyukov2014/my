@@ -6,10 +6,11 @@ class Volumeo():
         self.refresh_info()
 
     def refresh_info(self):
+        self.volumeo_info = self.get_volumeo_info()
+        self.track_info = self.get_track_info()
         print("Refresh volumeo info")
-        return
 
-    def volumeo_info(self):
+    def get_volumeo_info(self):
         return {
             "status":"stop", #"play" "pause" "stop"
             "position":0,
@@ -103,4 +104,10 @@ class Volumeo():
          hours = 99
       time_text = "{:02d}:{:02d}:{:02d}".format(hours, mins, secs)
       return time_text
+
+
+    def get_track_info(self):
+        artist_name_data = self.artist()
+        artist_name  = (artist_name_data[:31] + '..') if len(artist_name_data) > 33 else artist_name_data
+        return "{:35s}  {}/{}/{}".format(artist_name, self.bitrate(), self.bitdepth(), self.track_type())
 
