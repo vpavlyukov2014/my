@@ -36,9 +36,9 @@ def main():
 
             while cycles < 3:
                 i += 1
-                print("cicle{}".format(i))
+                print("cicle{}".format(cycles))
                 song.tick()
-                # time.sleep(0.025)
+                time.sleep(0.025)
                 cycles = song.get_cycles()
 
                 with canvas(device, background=image_composition()) as draw:
