@@ -11,10 +11,11 @@ from luma.core.render import canvas
 from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
 
-from .parts.scroll import *
-from .parts.volumeo import *
-from .parts.wifi_info import *
-
+from scroll import TextImage
+from scroll import Synchroniser
+from scroll import Scroller
+from volumeo import Volumeo
+from wifi_info import Wifi
 
 def main():
     volumeo = Volumeo()
