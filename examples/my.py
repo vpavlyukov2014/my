@@ -29,6 +29,13 @@ def main():
 
     try:
         while True:
+            i += 1
+            if (i == 10):
+               print("refresh{}".format(i))
+               volumeo.refresh_info()
+               wifi.refresh()
+               clock_text.refresh_info()
+
             synchroniser = Synchroniser()
             ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
             song = Scroller(image_composition, ci_song, 75, synchroniser)
