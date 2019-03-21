@@ -53,7 +53,7 @@ class Volumeo():
         return (int(info["duration"]))
 
 
-    def uri_text(self):
+    def get_uri_text(self):
         info = self.volumeo_info
         return (info["uri"])
 
@@ -135,5 +135,5 @@ class Volumeo():
         return  ((self.time_elapsed() * 100) / self.time_total())
 
     def get_title_uri(self):
-        return "{} {}".format(self.uri_text(), self.get_m_title())
+        return "{} {}".format(self.get_uri_text(), self.get_m_title())
 
