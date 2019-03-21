@@ -94,7 +94,7 @@ class Volumeo():
         info = self.volumeo_info()
         return info["repeatSingle"]
 
-    def secs_to_time(secs):
+    def secs_to_time(self, secs):
       hours = secs / 3600
       secs = secs % 3600
       mins = secs / 60
