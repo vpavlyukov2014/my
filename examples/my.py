@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import time
-import datetime
 import locale
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 from luma.core.image_composition import ImageComposition, ComposableImage
@@ -16,10 +15,12 @@ from scroll import Synchroniser
 from scroll import Scroller
 from volumeo import Volumeo
 from wifi_info import Wifi
+from clock_text import ClockText
 
 def main():
     volumeo = Volumeo()
     wifi = Wifi()
+    clock_text = ClockText()
 
     device = get_device()
     d_h = (device.height - 10)
@@ -27,6 +28,7 @@ def main():
 
     try:
         while True:
+            print("cicle")
             synchroniser = Synchroniser()
             ci_song = ComposableImage(TextImage(device, volumeo.m_title).image, position=(0, d_h))
             song = Scroller(image_composition, ci_song, 100, synchroniser)
@@ -40,7 +42,7 @@ def main():
                 with canvas(device, background=image_composition()) as draw:
                     image_composition.refresh()
                     wifi_siganl(device, draw, wifi)
-                    clock(draw)
+                    clock(draw, clock_text)
                     track_info(draw, volumeo)
                     progress_bar(device, draw, volumeo)
                     music_timer(device, draw, volumeo)
@@ -102,11 +104,9 @@ def draw_status_sym(device, draw, volumeo):
         draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=color, fill="red")
 
 
-def clock(draw):
+def clock(draw, clock_text):
     left_padding = 0
-    now = datetime.datetime.now()
-    today_time = now.strftime("%d %B %Y  %A  %H:%M:%S ")
-    text(draw, (left_padding, 0 ), today_time, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (left_padding, 0 ), clock_text.text_data, fill="white", font=proportional(LCD_FONT) )
 
 
 def progress_bar(device, draw, volumeo):
