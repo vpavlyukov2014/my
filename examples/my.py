@@ -25,12 +25,13 @@ def main():
     device = get_device()
     d_h = (device.height - 10)
     image_composition = ImageComposition(device)
+    i = 0
 
     try:
         while True:
             synchroniser = Synchroniser()
             ci_song = ComposableImage(TextImage(device, volumeo.m_title).image, position=(0, d_h))
-            song = Scroller(image_composition, ci_song, 100, synchroniser)
+            song = Scroller(image_composition, ci_song, 50, synchroniser)
             cycles = 0
 
             while cycles < 3:
@@ -39,7 +40,8 @@ def main():
                 cycles = song.get_cycles()
 
                 with canvas(device, background=image_composition()) as draw:
-                    print("cicle")
+                    i += 1
+                    print("cicle{}".format(i))
                     image_composition.refresh()
                     wifi_siganl(device, draw, wifi)
                     clock(draw, clock_text)
