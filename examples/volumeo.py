@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
 class Volumeo():
     def __init__(self):
         self.refresh_info()

@@ -1,3 +1,7 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
 from PIL import ImageFont, Image, ImageDraw
