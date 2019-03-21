@@ -28,7 +28,7 @@ def main():
     try:
         while True:
             synchroniser = Synchroniser()
-            ci_song = ComposableImage(TextImage(device, volumeo.m_title()).image, position=(0, d_h))
+            ci_song = ComposableImage(TextImage(device, volumeo.m_title).image, position=(0, d_h))
             song = Scroller(image_composition, ci_song, 100, synchroniser)
             cycles = 0
 
@@ -62,29 +62,19 @@ def track_info(draw, volumeo):
 def music_timer(device, draw, volumeo):
     h = 32
     left_padding = 0
-    total = volumeo.time_total()
-    elapsed = volumeo.time_elapsed()
-    total_text = volumeo.secs_to_time(total)
-    elapsed_text = volumeo.secs_to_time(elapsed)
-    info_text = elapsed_text
-    text(draw, (left_padding, h ), info_text, fill="white", font=proportional(LCD_FONT) )
-    x_start = device.width - left_padding - len(total_text) * 6 + 6
-    text(draw, (x_start, h ), total_text, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (left_padding, h ), volumeo.elapsed_time, fill="white", font=proportional(LCD_FONT) )
+    x_start = device.width - left_padding - len(volumeo.total_time) * 6 + 6
+    text(draw, (x_start, h ), volumeo.total_time, fill="white", font=proportional(LCD_FONT) )
 
 def draw_status_sym(device, draw, volumeo):
-    i = 0
     color = 'white'
-    if i % 2 == 0:
-        flash_color = 'white'
-    else:
-        flash_color = 'red'
     h = 32
     wx = 3
     zh = 14
     started_x = device.width/2 - 3*wx
     started_y = h + zh + 2
 
-    status_val = volumeo.status()
+    status_val = volumeo.status
     if status_val == 'play':
         d1_x1 = started_x
         d1_y1 = started_y
@@ -104,12 +94,12 @@ def draw_status_sym(device, draw, volumeo):
         d1_y1 = started_y
         d1_x2 = d1_x1 + wx
         d1_y2 = d1_y1 - zh
-        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=flash_color, fill="red")
+        draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), outline=color, fill="red")
         d2_x1 = d1_x1 + wx*2
         d2_y1 = d1_y1
         d2_x2 = d2_x1 + wx
         d2_y2 = d1_y2
-        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=flash_color, fill="red")
+        draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=color, fill="red")
 
 
 def clock(draw):
@@ -120,7 +110,6 @@ def clock(draw):
 
 
 def progress_bar(device, draw, volumeo):
-    completed = (volumeo.time_elapsed() * 100) / volumeo.time_total()
     h2 = 1
     w2 = 2
     color1 = "red"
@@ -131,7 +120,7 @@ def progress_bar(device, draw, volumeo):
 
     d1_x1 = 0
     d1_y1 = y_pad
-    d1_x2 = (display_w * completed)/100 - w2
+    d1_x2 = (display_w * volumeo.completed_procents)/100 - w2
     d1_y2 = y_pad + h
 
     d2_x1 = d1_x2

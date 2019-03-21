@@ -8,6 +8,11 @@ class Volumeo():
     def refresh_info(self):
         self.volumeo_info = self.get_volumeo_info()
         self.track_info = self.get_track_info()
+        self.m_title = self.m_title()
+        self.total_time = self.get_total_time()
+        self.elapsed_time = self.get_elapsed_time()
+        self.status = self.get_status()
+        self.completed_procents = self.get_completed_proc()
         print("Refresh volumeo info")
 
     def get_volumeo_info(self):
@@ -47,7 +52,7 @@ class Volumeo():
         return (int(info["duration"]))
 
 
-    def status(self):
+    def get_status(self):
         info = self.volumeo_info
         return info["status"]
 
@@ -110,4 +115,16 @@ class Volumeo():
         artist_name_data = self.artist()
         artist_name  = (artist_name_data[:31] + '..') if len(artist_name_data) > 33 else artist_name_data
         return "{:35s}  {}/{}/{}".format(artist_name, self.bitrate(), self.bitdepth(), self.track_type())
+
+    def get_total_time(self):
+        total = self.time_total()
+        return self.secs_to_time(total)
+
+    def get_elapsed_time(self):
+        elapsed = self.time_elapsed()
+        return self.secs_to_time(elapsed)
+
+
+    def get_completed_proc(self):
+        return  ((self.time_elapsed() * 100) / self.time_total())
 
