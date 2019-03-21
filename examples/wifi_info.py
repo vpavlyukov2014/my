@@ -10,10 +10,10 @@ class Wifi():
 
 
     def __init__(self):
-        self.refresh()
+        self.info = self.get_info()
 
-
-    def info(self):
+    def get_info(self):
+        print("Refresh wifi info")
         interface = "wlan0"
         proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
@@ -30,8 +30,7 @@ class Wifi():
 
 
     def refresh(self):
-        print("Refresh wifi info")
-        return
+        self.info = self.get_info()
 
 
     def wifi_level_desc(self, level):
