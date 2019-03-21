@@ -29,7 +29,8 @@ def main():
 
     try:
         while True:
-            if (i == 10):
+            print("nrefresh{}".format(i))
+            if i == 10:
                 print("refresh{}".format(i))
                 i = 0
                 volumeo.refresh_info()
