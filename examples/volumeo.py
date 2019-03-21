@@ -8,7 +8,7 @@ class Volumeo():
     def refresh_info(self):
         self.volumeo_info = self.get_volumeo_info()
         self.track_info = self.get_track_info()
-        self.m_title = self.m_title()
+        self.m_title = self.get_m_title()
         self.total_time = self.get_total_time()
         self.elapsed_time = self.get_elapsed_time()
         self.status = self.get_status()
@@ -63,7 +63,7 @@ class Volumeo():
         return info["status"]
 
 
-    def m_title(self):
+    def get_m_title(self):
         info = self.volumeo_info
         return info["title"]
 
@@ -135,5 +135,5 @@ class Volumeo():
         return  ((self.time_elapsed() * 100) / self.time_total())
 
     def get_title_uri(self):
-        return "{} {}".format(self.uri_text(), self.m_title())
+        return "{} {}".format(self.uri_text(), self.get_m_title())
 
