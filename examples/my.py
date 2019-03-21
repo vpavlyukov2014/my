@@ -26,19 +26,8 @@ def main():
     d_h = (device.height - 10)
     image_composition = ImageComposition(device)
     i = 0
-
     try:
         while True:
-            print("nrefresh{}".format(i))
-            if i == 10:
-                print("refresh{}".format(i))
-                i = 0
-                volumeo.refresh_info()
-                wifi.refresh()
-                clock_text.refresh_info()
-            else:
-                i += 1
-
             synchroniser = Synchroniser()
             ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
             song = Scroller(image_composition, ci_song, 75, synchroniser)
@@ -48,6 +37,14 @@ def main():
                 song.tick()
                 time.sleep(0.025)
                 cycles = song.get_cycles()
+                if i == 10:
+                    print("refresh{}".format(i))
+                    i = 0
+                    volumeo.refresh_info()
+                    wifi.refresh()
+                    clock_text.refresh_info()
+                else:
+                    i += 1
 
                 with canvas(device, background=image_composition()) as draw:
                     image_composition.refresh()
