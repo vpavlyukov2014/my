@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import datetime
 import locale
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')

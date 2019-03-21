@@ -7,6 +7,8 @@ from clock_text import ClockText
 from PIL import ImageFont
 import time
 import os
+import locale
+locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 
 
