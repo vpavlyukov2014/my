@@ -38,61 +38,61 @@ class Volumeo():
         }
 
     def time_elapsed(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return (int(info["seek"])/1000)
 
 
     def time_total(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return (int(info["duration"]))
 
 
     def status(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["status"]
 
 
     def m_title(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["title"]
 
 
     def artist(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["artist"]
 
 
     def track_type(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["trackType"]
 
 
     def bitrate(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["samplerate"]
 
 
     def bitdepth(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["bitdepth"]
 
     def stream(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["stream"]
 
 
     def random_play(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["random"]
 
 
     def repeat_play(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["repeat"]
 
 
     def repeat_one(self):
-        info = self.volumeo_info()
+        info = self.volumeo_info
         return info["repeatSingle"]
 
     def secs_to_time(self, secs):
