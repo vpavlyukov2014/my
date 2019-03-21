@@ -13,6 +13,7 @@ class Volumeo():
         self.elapsed_time = self.get_elapsed_time()
         self.status = self.get_status()
         self.completed_procents = self.get_completed_proc()
+        self.title_uri = self.get_title_uri()
         print("Refresh volumeo info")
 
     def get_volumeo_info(self):
@@ -50,6 +51,11 @@ class Volumeo():
     def time_total(self):
         info = self.volumeo_info
         return (int(info["duration"]))
+
+
+    def uri_text(self):
+        info = self.volumeo_info
+        return (info["uri"])
 
 
     def get_status(self):
@@ -127,4 +133,7 @@ class Volumeo():
 
     def get_completed_proc(self):
         return  ((self.time_elapsed() * 100) / self.time_total())
+
+    def get_title_uri(self):
+        return "{} {}".format(self.uri_text(), self.m_title())
 
