@@ -31,12 +31,10 @@ def main():
         while True:
             synchroniser = Synchroniser()
             ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
-            song = Scroller(image_composition, ci_song, 50, synchroniser)
+            song = Scroller(image_composition, ci_song, 75, synchroniser)
             cycles = 0
 
             while cycles < 3:
-                i += 1
-                print("cicle{}".format(cycles))
                 song.tick()
                 time.sleep(0.025)
                 cycles = song.get_cycles()
@@ -56,7 +54,6 @@ def main():
         pass
 
 
-
 def track_info(draw, volumeo):
     h = 12
     left_padding = 0
@@ -70,6 +67,7 @@ def music_timer(device, draw, volumeo):
     x_start = device.width - left_padding - len(volumeo.total_time) * 6 + 6
     text(draw, (x_start, h ), volumeo.total_time, fill="white", font=proportional(LCD_FONT) )
 
+
 def draw_status_sym(device, draw, volumeo):
     color = 'white'
     h = 32
@@ -77,7 +75,6 @@ def draw_status_sym(device, draw, volumeo):
     zh = 14
     started_x = device.width/2 - 3*wx
     started_y = h + zh + 2
-
     status_val = volumeo.status
     if status_val == 'play':
         d1_x1 = started_x
@@ -119,31 +116,26 @@ def progress_bar(device, draw, volumeo):
     y_pad = 25
     display_w = device.width
     h = 4
-
     d1_x1 = 0
     d1_y1 = y_pad
     d1_x2 = (display_w * volumeo.completed_procents)/100 - w2
     d1_y2 = y_pad + h
-
     d2_x1 = d1_x2
     d2_y1 = d1_y1 - h2
     d2_x2 = d1_x2 + w2
     d2_y2 = d1_y2 + h2
-
     d3_x1 = d2_x2
     d3_y1 = d1_y1
     d3_x2 = display_w - 1
     d3_y2 = d1_y2
-
     draw.rectangle((d1_x1, d1_y1, d1_x2, d1_y2), fill=color1)
     draw.rectangle((d3_x1, d3_y1, d3_x2, d3_y2), outline=color1, fill="black")
     draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), fill=color2)
 
 
 def wifi_siganl(device, draw, wifi):
-    wifi_info = wifi.info
-    wifi_level = wifi_info[0]
-    wifi_desc = "{}/{}G".format(wifi_info[1], wifi_info[2])
+    wifi_level =  wifi.info[0]
+    wifi_desc = wifi.info_text
     y_start = 0
     h = 2
     w = 2

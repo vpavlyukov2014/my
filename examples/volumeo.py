@@ -47,41 +47,33 @@ class Volumeo():
         info = self.volumeo_info
         return (int(info["seek"])/1000)
 
-
     def time_total(self):
         info = self.volumeo_info
         return (int(info["duration"]))
-
 
     def get_uri_text(self):
         info = self.volumeo_info
         return (info["uri"])
 
-
     def get_status(self):
         info = self.volumeo_info
         return info["status"]
-
 
     def get_m_title(self):
         info = self.volumeo_info
         return info["title"]
 
-
     def artist(self):
         info = self.volumeo_info
         return info["artist"]
-
 
     def track_type(self):
         info = self.volumeo_info
         return info["trackType"]
 
-
     def bitrate(self):
         info = self.volumeo_info
         return info["samplerate"]
-
 
     def bitdepth(self):
         info = self.volumeo_info
@@ -91,16 +83,13 @@ class Volumeo():
         info = self.volumeo_info
         return info["stream"]
 
-
     def random_play(self):
         info = self.volumeo_info
         return info["random"]
 
-
     def repeat_play(self):
         info = self.volumeo_info
         return info["repeat"]
-
 
     def repeat_one(self):
         info = self.volumeo_info
@@ -116,7 +105,6 @@ class Volumeo():
       time_text = "{:02d}:{:02d}:{:02d}".format(hours, mins, secs)
       return time_text
 
-
     def get_track_info(self):
         artist_name_data = self.artist()
         artist_name  = (artist_name_data[:31] + '..') if len(artist_name_data) > 33 else artist_name_data
@@ -129,7 +117,6 @@ class Volumeo():
     def get_elapsed_time(self):
         elapsed = self.time_elapsed()
         return self.secs_to_time(elapsed)
-
 
     def get_completed_proc(self):
         return  ((self.time_elapsed() * 100) / self.time_total())

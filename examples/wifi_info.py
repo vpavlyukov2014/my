@@ -10,7 +10,10 @@ class Wifi():
 
 
     def __init__(self):
-        self.info = self.get_info()
+        self.refresh()
+
+    def get_info_text(self):
+        return "{}/{}G".format(self.info[1], self.info[2])
 
     def get_info(self):
         print("Refresh wifi info")
@@ -28,10 +31,9 @@ class Wifi():
         level_norm = self.wifi_level_desc(level)
         return [level_norm, net_name, freq]
 
-
     def refresh(self):
         self.info = self.get_info()
-
+        self.info_text = self.get_info_text()
 
     def wifi_level_desc(self, level):
        if level == 0:
