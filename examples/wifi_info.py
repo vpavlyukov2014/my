@@ -34,7 +34,7 @@ class Wifi():
         return
 
 
-    def wifi_level_desc(level):
+    def wifi_level_desc(self, level):
        if level == 0:
            return 0
        elif level <= 70:
