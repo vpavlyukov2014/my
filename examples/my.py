@@ -35,13 +35,13 @@ def main():
             cycles = 0
 
             while cycles < 3:
+                i += 1
+                print("cicle{}".format(i))
                 song.tick()
                 time.sleep(0.025)
                 cycles = song.get_cycles()
 
                 with canvas(device, background=image_composition()) as draw:
-                    i += 1
-                    print("cicle{}".format(i))
                     image_composition.refresh()
                     wifi_siganl(device, draw, wifi)
                     clock(draw, clock_text)
