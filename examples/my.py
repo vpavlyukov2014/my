@@ -154,7 +154,7 @@ def progress_bar(device, draw, volumeo):
 
 
 def wifi_siganl(device, draw, wifi):
-    wifi_info = wifi.get_wifi_info()
+    wifi_info = wifi.info()
     wifi_level = wifi_info[0]
     wifi_desc = "{}/{}G".format(wifi_info[1], wifi_info[2])
     y_start = 0
