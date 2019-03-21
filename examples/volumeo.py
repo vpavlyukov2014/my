@@ -14,7 +14,7 @@ class Volumeo():
         self.status = self.get_status()
         self.completed_procents = self.get_completed_proc()
         self.title_uri = self.get_title_uri()
-        print("Refresh volumeo info")
+        # print("Refresh volumeo info")
 
     def get_volumeo_info(self):
         return {

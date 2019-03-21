@@ -38,7 +38,6 @@ def main():
                 time.sleep(0.025)
                 cycles = song.get_cycles()
                 if i == 10:
-                    print("refresh{}".format(i))
                     i = 0
                     volumeo.refresh_info()
                     wifi.refresh()
