@@ -29,12 +29,14 @@ def main():
 
     try:
         while True:
-            i += 1
             if (i == 10):
-               print("refresh{}".format(i))
-               volumeo.refresh_info()
-               wifi.refresh()
-               clock_text.refresh_info()
+                print("refresh{}".format(i))
+                i = 0
+                volumeo.refresh_info()
+                wifi.refresh()
+                clock_text.refresh_info()
+            else:
+                i += 1
 
             synchroniser = Synchroniser()
             ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
