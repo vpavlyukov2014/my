@@ -11,11 +11,11 @@ from luma.core.render import canvas
 from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
 
-from parts.Volumeo import *
-from parts.TextImage import *
-from parts.Scroller import *
-from parts.Synchroniser import *
-from parts.Wifi import *
+from parts import *
+# from parts.TextImage import *
+# from parts.Scroller import *
+# from parts.Synchroniser import *
+# from parts.Wifi import *
 
 
 def main():
