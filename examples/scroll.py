@@ -9,7 +9,7 @@ from PIL import ImageFont, Image, ImageDraw
 class TextImage():
     def __init__(self, device, dr_text):
         h = 8
-        w = len(dr_text)*6
+        w = len(dr_text)*5
         self.image = Image.new(device.mode, (w, h))
         draw = ImageDraw.Draw(self.image)
         text(draw, (0, 0 ), dr_text, fill="white", font=proportional(LCD_FONT) )
