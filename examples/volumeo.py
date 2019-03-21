@@ -135,5 +135,5 @@ class Volumeo():
         return  ((self.time_elapsed() * 100) / self.time_total())
 
     def get_title_uri(self):
-        return "{} {}".format(self.get_uri_text(), self.get_m_title())
+        return "{} {}".format(self.get_m_title(), self.get_uri_text())
 
