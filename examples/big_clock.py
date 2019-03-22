@@ -15,7 +15,7 @@ def main():
     device = get_device()
     clock = ClockText()
     font1 = make_font("Arial.ttf", 12)
-    font2 = make_font("Arial.ttf", 26)
+    font2 = make_font("Arial.ttf", 30)
 
     try:
         while True:
