@@ -11,12 +11,11 @@ import locale
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 
-
 def main():
     device = get_device()
     clock = ClockText()
-    font1 = make_font("FreePixel.ttf", 12)
-    font2 = make_font("FreePixel.ttf", 26)
+    font1 = make_font("Arial.ttf", 12)
+    font2 = make_font("Arial.ttf", 26)
 
     try:
         while True:
