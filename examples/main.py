@@ -35,7 +35,6 @@ def main():
     i = 0
     try:
         while True:
-            display_status.tick()
             if display_status.show_player:
                 synchroniser = Synchroniser()
                 ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
@@ -60,6 +59,7 @@ def main():
                         progress_bar(device, draw, volumeo)
                         music_timer(device, draw, volumeo)
                         draw_status_sym(device, draw, volumeo)
+                        display_status.tick()
                         print("tick__{} _{}".format(display_status.tick_in_idle, cycles))
                 del song
 
@@ -73,6 +73,7 @@ def main():
                     clock_x2 = (clock_w - clock_w2)/2
                     draw.text((clock_x1, clock_y1), clock_text.date_text, fill="white", font=clock_font1)
                     draw.text((clock_x2, clock_y2), clock_text.short_format, fill="white", font=clock_font2)
+                    display_status.tick()
                     time.sleep(1)
 
     except KeyboardInterrupt:

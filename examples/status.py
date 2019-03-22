@@ -19,7 +19,7 @@ class Status():
 
 
     def set_status(self):
-        if self.tick_in_idle > 1:
+        if self.tick_in_idle > 50:
             self.show_player = False
         else:
             self.show_player = True
