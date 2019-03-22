@@ -25,8 +25,8 @@ def main():
         while True:
             with canvas(device) as draw:
                 draw.text((0, 10), clock.date_text, fill="white", font=font1)
-                draw.text((10, 10), clock.short_format, fill="white", font=font2)
-                draw.text((10, 40), 'wdwцвуцувцувцувэ', fill="white", font=font2)
+                # draw.text((10, 10), clock.short_format, fill="white", font=font2)
+                draw.text((10, 30), 'wdwцвуПривет', fill="white", font=font1)
                 time.sleep(1)
 
     except KeyboardInterrupt:
