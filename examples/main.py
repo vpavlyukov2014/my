@@ -9,6 +9,8 @@ from demo_opts import get_device
 from luma.core.render import canvas
 from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
+from PIL import ImageFont
+
 
 from scroll import TextImage
 from scroll import Synchroniser
@@ -16,45 +18,60 @@ from scroll import Scroller
 from volumeo import Volumeo
 from wifi_info import Wifi
 from clock_text import ClockText
+from status import Status
 
 def main():
     volumeo = Volumeo()
     wifi = Wifi()
     clock_text = ClockText()
-
+    clock_font1 = make_font("arialbi.ttf", 14)
+    clock_font2 = make_font("ariali.ttf", 60)
     device = get_device()
-    d_h = (device.height - 10)
+    clock_w = device.width
     image_composition = ImageComposition(device)
+    display_status = Status(volumeo)
     i = 0
     try:
         while True:
-            synchroniser = Synchroniser()
-            ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
-            song = Scroller(image_composition, ci_song, 75, synchroniser)
-            cycles = 0
+            display_status.tick()
 
-            while cycles < 3:
-                song.tick()
-                time.sleep(0.025)
-                cycles = song.get_cycles()
-                if i == 10:
-                    i = 0
-                    volumeo.refresh_info()
-                    wifi.refresh()
-                    clock_text.refresh_info()
-                else:
-                    i += 1
+            if display_status.show_player:
+                synchroniser = Synchroniser()
+                ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
+                song = Scroller(image_composition, ci_song, 75, synchroniser)
+                cycles = 0
+                while cycles < 3:
+                    song.tick()
+                    time.sleep(0.025)
+                    cycles = song.get_cycles()
+                    if i == 10:
+                        i = 0
+                        volumeo.refresh_info()
+                        wifi.refresh()
+                        clock_text.refresh_info()
+                    else:
+                        i += 1
+                    with canvas(device, background=image_composition()) as draw:
+                        image_composition.refresh()
+                        wifi_siganl(device, draw, wifi)
+                        clock(draw, clock_text)
+                        track_info(draw, volumeo)
+                        progress_bar(device, draw, volumeo)
+                        music_timer(device, draw, volumeo)
+                        draw_status_sym(device, draw, volumeo)
+                del song
 
-                with canvas(device, background=image_composition()) as draw:
-                    image_composition.refresh()
-                    wifi_siganl(device, draw, wifi)
-                    clock(draw, clock_text)
-                    track_info(draw, volumeo)
-                    progress_bar(device, draw, volumeo)
-                    music_timer(device, draw, volumeo)
-                    draw_status_sym(device, draw, volumeo)
-
-            del song
+            else:
+                with canvas(device) as draw:
+                    clock_w1, clock_h1 = draw.textsize(clock.date_text, clock_font1)
+                    clock_w2, clock_h2 = draw.textsize(clock.short_format, clock_font2)
+                    clock_x1 = (clock_w - clock_w1)/2
+                    clock_y1 = 0
+                    clock_y2 = clock_h1 - 8
+                    clock_x2 = (clock_w - clock_w2)/2
+                    draw.text((clock_x1, clock_y1), clock.date_text, fill="white", font=clock_font1)
+                    draw.text((clock_x2, clock_y2), clock.short_format, fill="white", font=clock_font2)
+                    time.sleep(1)
 
     except KeyboardInterrupt:
         pass
@@ -161,6 +178,13 @@ def wifi_siganl(device, draw, wifi):
         x1 = x_start + w + (s + w)*i
         y1 = h * i + 1
         draw.rectangle((x0, y0, x1, y1), fill=color)
+
+
+def make_font(name, size):
+    font_path = os.path.abspath(os.path.join(
+        os.path.dirname(__file__), 'fonts', name))
+    return ImageFont.truetype(font_path, size)
+
 
 
 if __name__ == "__main__":
