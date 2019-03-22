@@ -4,12 +4,14 @@
 import os
 import time
 import locale
-locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 from demo_opts import get_device
 from luma.core.render import canvas
 from clock_text import ClockText
 from PIL import ImageFont
+
+locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
+
 
 
 
