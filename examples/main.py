@@ -56,7 +56,7 @@ def main():
                     with canvas(device, background=image_composition()) as draw:
                         image_composition.refresh()
                         wifi_siganl(device, draw, wifi)
-                        clock(draw, clock_text)
+                        clock(draw, clock_text, display_status.tick_in_idle)
                         track_info(draw, volumeo)
                         progress_bar(device, draw, volumeo)
                         music_timer(device, draw, volumeo)
@@ -128,9 +128,10 @@ def draw_status_sym(device, draw, volumeo):
         draw.rectangle((d2_x1, d2_y1, d2_x2, d2_y2), outline=color, fill="red")
 
 
-def clock(draw, clock_text):
+def clock(draw, clock_text, text_add):
     left_padding = 0
     text(draw, (left_padding, 0 ), clock_text.text_data, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (0, 10 ), text_add, fill="white", font=proportional(LCD_FONT) )
 
 
 def progress_bar(device, draw, volumeo):
