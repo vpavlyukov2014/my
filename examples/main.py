@@ -36,7 +36,6 @@ def main():
     try:
         while True:
             display_status.tick()
-
             if display_status.show_player:
                 synchroniser = Synchroniser()
                 ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
