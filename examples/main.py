@@ -60,7 +60,7 @@ def main():
                         music_timer(device, draw, volumeo)
                         draw_status_sym(device, draw, volumeo)
                         display_status.tick()
-                        print("tick__{}".format(display_status.tick_in_idle))
+                        # print("tick__{}".format(display_status.tick_in_idle))
                 del song
 
             else:
