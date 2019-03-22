@@ -17,8 +17,8 @@ from PIL import ImageFont
 def main():
     device = get_device()
     clock = ClockText()
-    font1 = make_font("Impact.ttf", 12)
-    font2 = make_font("Impact.ttf", 36)
+    font1 = make_font("Andale_Mono.ttf", 12)
+    font2 = make_font("Andale_Mono.ttf", 36)
 
     try:
         while True:
