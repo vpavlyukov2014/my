@@ -1,11 +1,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
+import os
 import time
 import locale
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
-import os
 
 from demo_opts import get_device
 from luma.core.render import canvas
@@ -17,8 +16,8 @@ from PIL import ImageFont
 def main():
     device = get_device()
     clock = ClockText()
-    font1 = make_font("Andale_Mono.ttf", 12)
-    font2 = make_font("Andale_Mono.ttf", 36)
+    font1 = make_font("Georgia.ttf", 12)
+    font2 = make_font("Georgia.ttf", 40)
 
     try:
         while True:
