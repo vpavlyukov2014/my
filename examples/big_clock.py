@@ -1,21 +1,24 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
+import time
+import locale
+locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
+import os
+
 from demo_opts import get_device
 from luma.core.render import canvas
 from clock_text import ClockText
 from PIL import ImageFont
-import time
-import os
-import locale
-locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
+
 
 
 def main():
     device = get_device()
     clock = ClockText()
-    font1 = make_font("Arial.ttf", 12)
-    font2 = make_font("Arial.ttf", 30)
+    font1 = make_font("Impact.ttf", 12)
+    font2 = make_font("Impact.ttf", 36)
 
     try:
         while True:
