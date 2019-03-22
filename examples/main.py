@@ -60,7 +60,7 @@ def main():
                         progress_bar(device, draw, volumeo)
                         music_timer(device, draw, volumeo)
                         draw_status_sym(device, draw, volumeo)
-                        print("tick__{}".format(display_status.tick_in_idle))
+                        print("tick__{} _{}".format(display_status.tick_in_idle, cycles))
                 del song
 
             else:
