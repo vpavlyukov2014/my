@@ -65,14 +65,14 @@ def main():
 
             else:
                 with canvas(device) as draw:
-                    clock_w1, clock_h1 = draw.textsize(clock.date_text, clock_font1)
-                    clock_w2, clock_h2 = draw.textsize(clock.short_format, clock_font2)
+                    clock_w1, clock_h1 = draw.textsize(clock_text.date_text, clock_font1)
+                    clock_w2, clock_h2 = draw.textsize(clock_text.short_format, clock_font2)
                     clock_x1 = (clock_w - clock_w1)/2
                     clock_y1 = 0
                     clock_y2 = clock_h1 - 8
                     clock_x2 = (clock_w - clock_w2)/2
-                    draw.text((clock_x1, clock_y1), clock.date_text, fill="white", font=clock_font1)
-                    draw.text((clock_x2, clock_y2), clock.short_format, fill="white", font=clock_font2)
+                    draw.text((clock_x1, clock_y1), clock_text.date_text, fill="white", font=clock_font1)
+                    draw.text((clock_x2, clock_y2), clock_text.short_format, fill="white", font=clock_font2)
                     time.sleep(1)
 
     except KeyboardInterrupt:

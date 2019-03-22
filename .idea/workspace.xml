@@ -14,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/examples/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="516">
-              <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
+              <caret line="62" column="87" selection-start-line="62" selection-start-column="87" selection-end-line="62" selection-end-column="87" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
               </folding>
@@ -135,8 +135,8 @@
         <option value="$PROJECT_DIR$/examples/clock_text.py" />
         <option value="$PROJECT_DIR$/examples/big_clock.py" />
         <option value="$PROJECT_DIR$/examples/status.py" />
-        <option value="$PROJECT_DIR$/examples/main.py" />
         <option value="$PROJECT_DIR$/examples/volumeo.py" />
+        <option value="$PROJECT_DIR$/examples/main.py" />
       </list>
     </option>
   </component>
@@ -380,7 +380,7 @@
     <entry file="file://$PROJECT_DIR$/examples/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
-          <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
+          <caret line="62" column="87" selection-start-line="62" selection-start-column="87" selection-end-line="62" selection-end-column="87" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
           </folding>
