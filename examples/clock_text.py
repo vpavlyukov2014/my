@@ -23,7 +23,7 @@ class ClockText():
 
 
     def get_short_format(self):
-        return self.time_now.strftime("%H:%M")
+        return unicode(self.time_now.strftime("%H:%M"), 'utf-8')
 
 
     def get_time(self):
@@ -31,4 +31,4 @@ class ClockText():
 
 
     def get_date_text(self):
-        return self.time_now.strftime("%d %B %Y  %A")
+        return unicode(self.time_now.strftime("%d %B %Y  %A"), 'utf-8')

@@ -22,8 +22,17 @@ def main():
     try:
         while True:
             with canvas(device) as draw:
-                draw.text((10, 0), unicode(clock.date_text, 'utf-8'), fill="white", font=font1)
-                draw.text((30, 10), clock.short_format, fill="white", font=font2)
+                w = device.width
+                w1, h1 = draw.textsize(clock.date_text, font1)
+                w2, h2 = draw.textsize(clock.short_format, font2)
+
+                x1 = (w - w1)/2
+                y1 = 0
+                x2 = h1 + 2
+                y2 = (w - w2)/2
+
+                draw.text((x1, y1), clock.date_text, fill="white", font=font1)
+                draw.text((x2, y2), clock.short_format, fill="white", font=font2)
                 time.sleep(1)
 
     except KeyboardInterrupt:
