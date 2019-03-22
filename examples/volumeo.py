@@ -20,11 +20,11 @@ class Volumeo():
         return {
             "status":"stop", #"play" "pause" "stop"
             "position":0,
-            "title":"Привет заголовок песни очень длинный и предлинный как незнайчто",
+            "title":"Привет заголовок песни очень длинный",
             "artist":"Группа Браво",
             "album":"Мой альбом",
             "albumart":"/albumart?web=Baustelle/La%20malavita/extralarge&path=%2FNAS%2FMusic%2FBaustelle%20-%20La%20Malavita",
-            "uri":"mnt/NAS/Music/Baustelle - La Malavita/02 la guerra è finita.mp3",
+            "uri":"mnt/NAS/Music/Baustelle- finita.mp3",
             "trackType":"mp3",
             "seek":42240,
             "duration":262,
