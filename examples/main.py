@@ -60,11 +60,12 @@ def main():
                         music_timer(device, draw, volumeo)
                         draw_status_sym(device, draw, volumeo)
                         display_status.tick()
-                        print("tick__{} _{}".format(display_status.tick_in_idle, cycles))
+                        print("tick__{}".format(display_status.tick_in_idle))
                 del song
 
             else:
                 with canvas(device) as draw:
+                    clock_text.refresh_info()
                     clock_w1, clock_h1 = draw.textsize(clock_text.date_text, clock_font1)
                     clock_w2, clock_h2 = draw.textsize(clock_text.short_format, clock_font2)
                     clock_x1 = (clock_w - clock_w1)/2

@@ -23,7 +23,11 @@ class ClockText():
 
 
     def get_short_format(self):
-        return unicode(self.time_now.strftime("%H:%M"), 'utf-8')
+        if int(self.time_now.strftime("%S")) % 2 == 0:
+            text = unicode(self.time_now.strftime("%H:%M"), 'utf-8')
+        else:
+            text = unicode(self.time_now.strftime("%H.%M"), 'utf-8')
+        return text
 
 
     def get_time(self):
