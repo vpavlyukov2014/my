@@ -16,7 +16,7 @@ from PIL import ImageFont
 def main():
     device = get_device()
     clock = ClockText()
-    font1 = make_font("ariali.ttf", 14)
+    font1 = make_font("arialbi.ttf", 14)
     font2 = make_font("ariali.ttf", 60)
 
     try:
