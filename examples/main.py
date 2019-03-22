@@ -29,6 +29,7 @@ def main():
     clock_font2 = make_font("ariali.ttf", 60)
     device = get_device()
     clock_w = device.width
+    d_h = (device.height - 10)
     image_composition = ImageComposition(device)
     display_status = Status(volumeo)
     i = 0
