@@ -16,14 +16,14 @@ from PIL import ImageFont
 def main():
     device = get_device()
     clock = ClockText()
-    font1 = make_font("Andale_Mono.ttf", 12)
-    font2 = make_font("Andale_Mono.ttf", 60)
+    font1 = make_font("Andale_Mono.ttf", 14)
+    font2 = make_font("Andale_Mono.ttf", 58)
 
     try:
         while True:
             with canvas(device) as draw:
                 draw.text((10, 0), unicode(clock.date_text, 'utf-8'), fill="white", font=font1)
-                draw.text((30, 12), clock.short_format, fill="white", font=font2)
+                draw.text((30, 10), clock.short_format, fill="white", font=font2)
                 time.sleep(1)
 
     except KeyboardInterrupt:
