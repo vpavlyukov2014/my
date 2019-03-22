@@ -28,8 +28,8 @@ def main():
 
                 x1 = (w - w1)/2
                 y1 = 0
-                x2 = h1 + 2
-                y2 = (w - w2)/2
+                y2 = h1 + 2
+                x2 = (w - w2)/2
 
                 draw.text((x1, y1), clock.date_text, fill="white", font=font1)
                 draw.text((x2, y2), clock.short_format, fill="white", font=font2)
