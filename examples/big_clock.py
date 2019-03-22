@@ -17,7 +17,7 @@ def main():
     device = get_device()
     clock = ClockText()
     font1 = make_font("Andale_Mono.ttf", 14)
-    font2 = make_font("Andale_Mono.ttf", 58)
+    font2 = make_font("Andale_Mono.ttf", 56)
 
     try:
         while True:
@@ -28,7 +28,7 @@ def main():
 
                 x1 = (w - w1)/2
                 y1 = 0
-                y2 = h1 + 2
+                y2 = h1 - 10
                 x2 = (w - w2)/2
 
                 draw.text((x1, y1), clock.date_text, fill="white", font=font1)
