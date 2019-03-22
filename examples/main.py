@@ -131,7 +131,7 @@ def draw_status_sym(device, draw, volumeo):
 def clock(draw, clock_text, text_add):
     left_padding = 0
     text(draw, (left_padding, 0 ), clock_text.text_data, fill="white", font=proportional(LCD_FONT) )
-    text(draw, (0, 10 ), text_add, fill="white", font=proportional(LCD_FONT) )
+    text(draw, (0, 10 ), "_{}", format(text_add), fill="white", font=proportional(LCD_FONT) )
 
 
 def progress_bar(device, draw, volumeo):
