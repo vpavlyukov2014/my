@@ -1,6 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import requests
+# pip install requests
+
 class Volumeo():
     def __init__(self):
         self.refresh_info()
@@ -14,34 +17,10 @@ class Volumeo():
         self.status = self.get_status()
         self.completed_procents = self.get_completed_proc()
         self.title_uri = self.get_title_uri()
-        # print("Refresh volumeo info")
 
     def get_volumeo_info(self):
-        return {
-            "status":"stop", #"play" "pause" "stop"
-            "position":0,
-            "title":"Привет заголовок песни очень длинный",
-            "artist":"Группа Браво",
-            "album":"Мой альбом",
-            "albumart":"/albumart?web=Baustelle/La%20malavita/extralarge&path=%2FNAS%2FMusic%2FBaustelle%20-%20La%20Malavita",
-            "uri":"mnt/NAS/Music/Baustelle- finita.mp3",
-            "trackType":"mp3",
-            "seek":42240,
-            "duration":262,
-            "samplerate":"44.1 KHz",
-            "bitdepth":"24 bit",
-            "channels":2,
-            "random": None,
-            "repeat": None,
-            "repeatSingle": False,
-            "consume": False,
-            "volume":41,
-            "mute": False,
-            "stream":"mp3",
-            "updatedb": False,
-            "volatile": False,
-            "service":"mpd"
-        }
+        req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
+        return req.json()
 
     def time_elapsed(self):
         info = self.volumeo_info
