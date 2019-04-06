@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import requests
+import sys
+sys.setdefaultencoding('utf8')
 # pip install requests
+
 
 class Volumeo():
     def __init__(self):
