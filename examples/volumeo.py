@@ -21,7 +21,7 @@ class Volumeo():
 
     def get_volumeo_info(self):
         req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
-        return req.json()
+        return req.encode("utf-8").json()
 
     def time_elapsed(self):
         info = self.volumeo_info
@@ -102,5 +102,5 @@ class Volumeo():
         return  ((self.time_elapsed() * 100) / self.time_total())
 
     def get_title_uri(self):
-        return "{} {}".format(unicode(self.get_m_title(), "utf-8"), unicode(self.get_uri_text(), "utf-8"))
+        return "{} {}".format(self.get_m_title(), self.get_uri_text())
 
