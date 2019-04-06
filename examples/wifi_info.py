@@ -39,7 +39,7 @@ class Wifi():
         try:
             result = re.search(patrn, str).group(group_num)
         except:
-            result = '_error_'
+            result = '0'
         return result
 
 
