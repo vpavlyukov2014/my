@@ -18,7 +18,7 @@ class Wifi():
     def get_info(self):
         # print("Refresh wifi info")
         interface = "wlan0"
-        proc = subprocess.Popen(["iwlist", interface, "scan"],stdout=subprocess.PIPE, universal_newlines=True)
+        proc = subprocess.Popen(["iwlist", interface, "scan"], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
         freq = re.search('(?<=Frequency:)(\d)', out).group(0)
         net_name = re.search('(?<=ESSID:")(.+)(")', out).group(1)
