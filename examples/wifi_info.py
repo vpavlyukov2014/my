@@ -20,9 +20,9 @@ class Wifi():
         interface = "wlan0"
         proc = subprocess.Popen(["iwlist", interface, "scan"], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
-        freq = re.search('(?<=Frequency:)(\d)', out.decode('utf-8')).group(0)
-        net_name = re.search('(?<=ESSID:")(.+)(")', out.decode('utf-8')).group(1)
-        result = re.search('(?<=Signal level=-)(\d+)', out.decode('utf-8')).group(0)
+        freq = self.search_reg('(?<=Frequency:)(\d)', out, 0)
+        net_name = self.search_re('(?<=ESSID:")(.+)(")', out, 1)
+        result = self.search_re('(?<=Signal level=-)(\d+)', out, 0)
         result_val = int(result)
         if math.isnan(result_val):
             level = 0
@@ -34,6 +34,14 @@ class Wifi():
     def refresh(self):
         self.info = self.get_info()
         self.info_text = self.get_info_text()
+
+    def search_reg(self, patrn, str, group_num):
+        try:
+            result = re.search(patrn, str).group(group_num)
+        except:
+            result = '_error_'
+        return result
+
 
     def wifi_level_desc(self, level):
        if level == 0:
