@@ -21,8 +21,8 @@ class Wifi():
         proc = subprocess.Popen(["iwlist", interface, "scan"], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
         freq = self.search_reg('(?<=Frequency:)(\d)', out, 0)
-        net_name = self.search_re('(?<=ESSID:")(.+)(")', out, 1)
-        result = self.search_re('(?<=Signal level=-)(\d+)', out, 0)
+        net_name = self.search_reg('(?<=ESSID:")(.+)(")', out, 1)
+        result = self.search_reg('(?<=Signal level=-)(\d+)', out, 0)
         result_val = int(result)
         if math.isnan(result_val):
             level = 0
