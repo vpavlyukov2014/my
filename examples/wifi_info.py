@@ -20,9 +20,9 @@ class Wifi():
         interface = "wlan0"
         proc = subprocess.Popen(["iwlist", interface, "scan"], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
-        freq = re.search('(?<=Frequency:)(\d)', out).group(0)
-        net_name = re.search('(?<=ESSID:")(.+)(")', out).group(1)
-        result = re.search('(?<=Signal level=-)(\d+)', out).group(0)
+        freq = re.search('(?<=Frequency:)(\d)', out.decode('utf-8')).group(0)
+        net_name = re.search('(?<=ESSID:")(.+)(")', out.decode('utf-8')).group(1)
+        result = re.search('(?<=Signal level=-)(\d+)', out.decode('utf-8')).group(0)
         result_val = int(result)
         if math.isnan(result_val):
             level = 0
