@@ -21,7 +21,7 @@ class Volumeo():
 
     def get_volumeo_info(self):
         req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
-        return req.encode("utf-8").json()
+        return req.json().encode("utf-8")
 
     def time_elapsed(self):
         info = self.volumeo_info
