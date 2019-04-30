@@ -10,6 +10,7 @@ class Volumeo():
         self.refresh_info()
 
     def refresh_info(self):
+        print ("req volumio info started")
         self.volumeo_info = self.get_volumeo_info()
         self.track_info = self.get_track_info()
         self.m_title = self.get_m_title()
@@ -20,7 +21,6 @@ class Volumeo():
         self.title_uri = self.get_title_uri()
 
     def get_volumeo_info(self):
-        print ("req volumio info started")
         req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
         return req.json()
 
