@@ -16,7 +16,7 @@ class Wifi():
         return "{}/{}G".format(self.info[1], self.info[2])
 
     def get_info(self):
-        # print("Refresh wifi info")
+        print("Refresh wifi info")
         interface = "wlan0"
         proc = subprocess.Popen(["iwlist", interface, "scanning last"], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
