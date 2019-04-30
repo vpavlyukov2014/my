@@ -23,6 +23,7 @@ from status import Status
 
 def main():
     volumeo = Volumeo()
+    volumeo.refresh_info()
     wifi = Wifi()
     clock_text = ClockText()
     clock_font1 = make_font("arialbi.ttf", 14)
@@ -42,9 +43,9 @@ def main():
                 cycles = 0
                 while cycles < 3:
                     song.tick()
-                    time.sleep(0.25)
+                    time.sleep(0.5)
                     cycles = song.get_cycles()
-                    if i == 50:
+                    if i == 10:
                         i = 0
                         volumeo.refresh_info()
                         wifi.refresh()
