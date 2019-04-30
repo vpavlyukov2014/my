@@ -10,7 +10,7 @@ class Status():
 
 
     def tick(self):
-        self.volumeo.refresh_info()
+        # self.volumeo.refresh_info()
         if self.volumeo.status == 'play':
             self.tick_in_idle = 0
         else:
