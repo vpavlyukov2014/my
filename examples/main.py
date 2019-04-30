@@ -45,11 +45,11 @@ def main():
                     song.tick()
                     time.sleep(0.5)
                     cycles = song.get_cycles()
-                    if i == 10:
+                    if i == 100:
                         i = 0
-                        volumeo.refresh_info()
-                        wifi.refresh()
-                        clock_text.refresh_info()
+                        # volumeo.refresh_info()
+                        # wifi.refresh()
+                        # clock_text.refresh_info()
                     else:
                         i += 1
                     with canvas(device, background=image_composition()) as draw:
