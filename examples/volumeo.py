@@ -10,7 +10,6 @@ class Volumeo():
         self.refresh_info()
 
     def refresh_info(self):
-        print ("req volumio info started")
         self.volumeo_info = self.get_volumeo_info()
         self.track_info = self.get_track_info()
         self.m_title = self.get_m_title()
