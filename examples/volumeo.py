@@ -99,7 +99,10 @@ class Volumeo():
         return self.secs_to_time(elapsed)
 
     def get_completed_proc(self):
-        return  ((self.time_elapsed() * 100) / self.time_total())
+        if self.time_total() > 0:
+            return (self.time_elapsed() * 100) / self.time_total()
+        else:
+            return 0
 
     def get_title_uri(self):
         return "{} {}".format(self.get_m_title().encode("utf-8"), self.get_uri_text().encode("utf-8"))
