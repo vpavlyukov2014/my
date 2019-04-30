@@ -35,7 +35,6 @@ def main():
     i = 0
     try:
         while True:
-            display_status.tick()
             print("tick__{}".format(display_status.tick_in_idle))
             if display_status.show_player:
                 synchroniser = Synchroniser()
@@ -51,6 +50,7 @@ def main():
                         volumeo.refresh_info()
                         wifi.refresh()
                         clock_text.refresh_info()
+                        display_status.tick()
                     else:
                         i += 1
                     with canvas(device, background=image_composition()) as draw:
@@ -73,6 +73,7 @@ def main():
                     clock_x2 = (clock_w - clock_w2)/2
                     draw.text((clock_x1, clock_y1), clock_text.date_text, fill="white", font=clock_font1)
                     draw.text((clock_x2, clock_y2), clock_text.short_format, fill="white", font=clock_font2)
+                    display_status.tick()
                     time.sleep(1)
 
     except KeyboardInterrupt:
