@@ -25,7 +25,7 @@ def main():
     # print("tick__{}".format(display_status.tick_in_idle))
     print ("main started")
     volumeo = Volumeo()
-    # volumeo.refresh_info()
+    volumeo.refresh_info()
     wifi = Wifi()
     clock_text = ClockText()
     clock_font1 = make_font("arialbi.ttf", 14)
