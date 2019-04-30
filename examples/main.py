@@ -62,6 +62,7 @@ def main():
                         display_status.tick()
                         # print("tick__{}".format(display_status.tick_in_idle))
                 del song
+                time.sleep(1)
 
             else:
                 with canvas(device) as draw:
