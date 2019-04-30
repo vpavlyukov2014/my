@@ -22,6 +22,8 @@ from clock_text import ClockText
 from status import Status
 
 def main():
+    # print("tick__{}".format(display_status.tick_in_idle))
+    print ("main started")
     volumeo = Volumeo()
     volumeo.refresh_info()
     wifi = Wifi()
@@ -62,8 +64,6 @@ def main():
                         draw_status_sym(device, draw, volumeo)
                         display_status.tick()
                 del song
-                time.sleep(1)
-
             else:
                 with canvas(device) as draw:
                     clock_text.refresh_info()
@@ -195,6 +195,5 @@ def make_font(name, size):
 if __name__ == "__main__":
     try:
         main()
-        time.sleep(1)
     except KeyboardInterrupt:
         pass
