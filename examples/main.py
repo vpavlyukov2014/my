@@ -65,6 +65,7 @@ def main():
             else:
                 with canvas(device) as draw:
                     clock_text.refresh_info()
+                    volumeo.refresh_info()
                     clock_w1, clock_h1 = draw.textsize(clock_text.date_text, clock_font1)
                     clock_w2, clock_h2 = draw.textsize(clock_text.short_format, clock_font2)
                     clock_x1 = (clock_w - clock_w1)/2
