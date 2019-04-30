@@ -46,7 +46,7 @@ def main():
                     cycles = song.get_cycles()
                     if i == 50:
                         i = 0
-                        # volumeo.refresh_info()
+                        volumeo.refresh_info()
                         wifi.refresh()
                         clock_text.refresh_info()
                     else:

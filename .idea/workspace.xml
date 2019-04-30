@@ -113,6 +113,8 @@
       <find>d_h</find>
       <find>clock_text</find>
       <find>get_short_format</find>
+      <find>volumeo</find>
+      <find>refresh_info</find>
     </findStrings>
     <replaceStrings>
       <replace>info</replace>
