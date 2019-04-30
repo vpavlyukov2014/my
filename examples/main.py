@@ -42,7 +42,7 @@ def main():
                 cycles = 0
                 while cycles < 3:
                     song.tick()
-                    time.sleep(0.025)
+                    time.sleep(0.25)
                     cycles = song.get_cycles()
                     if i == 50:
                         i = 0
@@ -60,7 +60,6 @@ def main():
                         music_timer(device, draw, volumeo)
                         draw_status_sym(device, draw, volumeo)
                         display_status.tick()
-                        # print("tick__{}".format(display_status.tick_in_idle))
                 del song
                 time.sleep(1)
 
