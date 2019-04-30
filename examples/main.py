@@ -195,5 +195,6 @@ def make_font(name, size):
 if __name__ == "__main__":
     try:
         main()
+        time.sleep(1)
     except KeyboardInterrupt:
         pass
