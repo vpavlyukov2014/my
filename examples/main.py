@@ -45,7 +45,7 @@ def main():
                     song.tick()
                     time.sleep(0.025)
                     cycles = song.get_cycles()
-                    if i == 400:
+                    if i == 10:
                         i = 0
                         volumeo.refresh_info()
                         wifi.refresh()
