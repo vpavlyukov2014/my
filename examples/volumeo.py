@@ -25,55 +25,55 @@ class Volumeo():
 
     def time_elapsed(self):
         info = self.volumeo_info
-        return (int(info["seek"])/1000)
+        return (int(info.get("seek", 0))/1000)
 
     def time_total(self):
         info = self.volumeo_info
-        return (int(info["duration"]))
+        return (int(info.get("duration", 0)))
 
     def get_uri_text(self):
         info = self.volumeo_info
-        return (info["uri"])
+        return (info.get("uri", ''))
 
     def get_status(self):
         info = self.volumeo_info
-        return info["status"]
+        return info.get("status", '')
 
     def get_m_title(self):
         info = self.volumeo_info
-        return info["title"]
+        return info.get("title", '')
 
     def artist(self):
         info = self.volumeo_info
-        return info["artist"]
+        return info.get("artist", '')
 
     def track_type(self):
         info = self.volumeo_info
-        return info["trackType"]
+        return info.get("trackType", '')
 
     def bitrate(self):
         info = self.volumeo_info
-        return info["samplerate"]
+        return info.get("samplerate", '')
 
     def bitdepth(self):
         info = self.volumeo_info
-        return info["bitdepth"]
+        return info.get("bitdepth", '')
 
     def stream(self):
         info = self.volumeo_info
-        return info["stream"]
+        return info.get("stream", '')
 
     def random_play(self):
         info = self.volumeo_info
-        return info["random"]
+        return info.get("random", '')
 
     def repeat_play(self):
         info = self.volumeo_info
-        return info["repeat"]
+        return info.get("repeat", '')
 
     def repeat_one(self):
         info = self.volumeo_info
-        return info["repeatSingle"]
+        return info.get("repeatSingle", '')
 
     def secs_to_time(self, secs):
       hours = secs / 3600
