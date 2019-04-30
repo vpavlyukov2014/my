@@ -6,8 +6,8 @@ import requests
 
 
 class Volumeo():
-    # def __init__(self):
-    #     self.refresh_info()
+    def __init__(self):
+        self.refresh_info()
 
     def refresh_info(self):
         print ("req volumio info started")

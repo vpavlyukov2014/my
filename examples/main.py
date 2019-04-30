@@ -22,10 +22,7 @@ from clock_text import ClockText
 from status import Status
 
 def main():
-    # print("tick__{}".format(display_status.tick_in_idle))
-    print ("main started")
     volumeo = Volumeo()
-    volumeo.refresh_info()
     wifi = Wifi()
     clock_text = ClockText()
     clock_font1 = make_font("arialbi.ttf", 14)
@@ -47,11 +44,11 @@ def main():
                     song.tick()
                     time.sleep(0.025)
                     cycles = song.get_cycles()
-                    if i == 100:
+                    if i == 400:
                         i = 0
-                        # volumeo.refresh_info()
-                        # wifi.refresh()
-                        # clock_text.refresh_info()
+                        volumeo.refresh_info()
+                        wifi.refresh()
+                        clock_text.refresh_info()
                     else:
                         i += 1
                     with canvas(device, background=image_composition()) as draw:
@@ -66,7 +63,7 @@ def main():
                 del song
             else:
                 with canvas(device) as draw:
-                    # clock_text.refresh_info()
+                    clock_text.refresh_info()
                     clock_w1, clock_h1 = draw.textsize(clock_text.date_text, clock_font1)
                     clock_w2, clock_h2 = draw.textsize(clock_text.short_format, clock_font2)
                     clock_x1 = (clock_w - clock_w1)/2
