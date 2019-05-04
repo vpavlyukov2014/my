@@ -24,7 +24,7 @@ class Volumeo():
             req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
         except requests.exceptions.RequestException as e:
             print e
-            req = '{}'
+            req = {}
         return req.json()
 
     def time_elapsed(self):
