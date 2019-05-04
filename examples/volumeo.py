@@ -22,10 +22,11 @@ class Volumeo():
     def get_volumeo_info(self):
         try:
             req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
+            vol_status = req.json()
         except requests.exceptions.RequestException as e:
             print e
-            req = {}
-        return req.json()
+            vol_status = {}
+        return vol_status
 
     def time_elapsed(self):
         info = self.volumeo_info
