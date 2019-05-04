@@ -25,7 +25,20 @@ class Volumeo():
             vol_status = req.json()
         except requests.exceptions.RequestException as e:
             print e
-            vol_status = {}
+            vol_status = {
+                "status":"stop",
+                "position":0,
+                "title":"-",
+                "albumart":"-",
+                "uri":"-",
+                "trackType":"-",
+                "seek":0,
+                "samplerate":"",
+                "bitdepth":"",
+                "channels":0,
+                "volume":0,
+                "stream":"-",
+                "service":"-"}
         return vol_status
 
     def time_elapsed(self):
