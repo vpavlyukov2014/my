@@ -8,7 +8,6 @@ import math
 
 class Wifi():
 
-
     def __init__(self):
         self.refresh()
 
@@ -16,8 +15,6 @@ class Wifi():
         return "{}/{}G".format(self.info[1], self.info[2])
 
     def get_info(self):
-        print("Refresh wifi info")
-        
         proc = subprocess.Popen(["sudo iwlist wlan0 scanning last"], shell=True, stdout=subprocess.PIPE, universal_newlines=True)
         out, err = proc.communicate()
         freq = self.search_reg('(?<=Frequency:)(\d)', out, 0)
@@ -41,7 +38,6 @@ class Wifi():
         except:
             result = '0'
         return result
-
 
     def wifi_level_desc(self, level):
        if level == 0:

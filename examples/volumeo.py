@@ -20,7 +20,11 @@ class Volumeo():
         self.title_uri = self.get_title_uri()
 
     def get_volumeo_info(self):
-        req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
+        try:
+            req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
+        except requests.exceptions.RequestException as e:
+            print e
+            req = ''
         return req.json()
 
     def time_elapsed(self):
