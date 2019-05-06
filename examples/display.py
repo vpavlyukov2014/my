@@ -105,10 +105,11 @@ class Display():
 
     def volume_bar(self, draw, volumeo):
         volumeo.refresh_info()
-        vol_w, vol_h = draw.textsize(volumeo.volume_level, self.clock_font2)
+        volume_text = "vol.{}".format(volumeo.volume_level.encode("utf-8"))
+        vol_w, vol_h = draw.textsize(volume_text, self.clock_font2)
         vol_x = (self.clock_w - vol_w)/2
         vol_y = vol_h - 10
-        draw.text((vol_x, vol_y), volumeo.volume_level, fill="white", font=self.clock_font2)
+        draw.text((vol_x, vol_y), volume_text, fill="white", font=self.clock_font2)
 
 
     def music_timer(self, device, draw, volumeo):
