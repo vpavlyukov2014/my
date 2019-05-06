@@ -37,6 +37,7 @@ class Display():
         self.image_composition = ImageComposition(self.device)
         self.display_status = Status(self.volumeo)
         self.i = 0
+        self.beg_val = 0
 
     def start(self):
         try:
@@ -106,7 +107,8 @@ class Display():
     def show_loading(self):
         with canvas(self.device) as draw:
             self.volumeo.refresh_info()
-            draw.text((15, 10), 'Loading...', fill="white", font=self.clock_font3)
+            loading_message = ('Loading {}', format(self.router_val))
+            draw.text((10, 10), loading_message, fill="white", font=self.clock_font3)
             time.sleep(1)
 
 
@@ -215,3 +217,16 @@ class Display():
         font_path = os.path.abspath(os.path.join(
             os.path.dirname(__file__), 'fonts', name))
         return ImageFont.truetype(font_path, size)
+
+
+    def router_val(self):
+        begs = ['|', '/', '-', '\\']
+        if self.beg_val < 4:
+            res = begs[self.beg_val]
+            self.beg_val += 1
+        else:
+            self.beg_val = 0
+            res = begs[self.beg_val]
+        return res
+
+

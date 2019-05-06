@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/examples/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/volumeo.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/volumeo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="107" column="39" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
+            <state relative-caret-position="280">
+              <caret line="108" column="39" lean-forward="true" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
               </folding>
@@ -49,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/volumeo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="52" column="32" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="32" />
+            <state relative-caret-position="429">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -365,15 +364,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/volumeo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="52" column="32" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="32" />
+        <state relative-caret-position="429">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="107" column="39" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
+        <state relative-caret-position="280">
+          <caret line="108" column="39" lean-forward="true" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
           </folding>
