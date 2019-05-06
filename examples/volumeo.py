@@ -54,7 +54,7 @@ class Volumeo():
 
     def get_volume_level(self):
         info = self.volumeo_info
-        return (int(info.get("volume", 0)))
+        return (info.get("volume", '0'))
 
     def time_elapsed(self):
         info = self.volumeo_info
