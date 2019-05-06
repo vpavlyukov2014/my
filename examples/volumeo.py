@@ -83,19 +83,19 @@ class Volumeo():
 
     def track_type(self):
         info = self.volumeo_info
-        return info.get("trackType", '-')
+        return info.get("trackType", '')
 
     def bitrate(self):
         info = self.volumeo_info
-        return info.get("samplerate", '-')
+        return info.get("samplerate", '')
 
     def bitdepth(self):
         info = self.volumeo_info
-        return info.get("bitdepth", '-')
+        return info.get("bitdepth", '')
 
     def stream(self):
         info = self.volumeo_info
-        return info.get("stream", '-')
+        return info.get("stream", '')
 
     def random_play(self):
         info = self.volumeo_info
@@ -139,5 +139,5 @@ class Volumeo():
             return 0
 
     def get_title_uri(self):
-        return "{} uri:{}".format(self.get_m_title().encode("utf-8"), self.get_uri_text().encode("utf-8"))
+        return "{} {}".format(self.get_m_title().encode("utf-8"), self.get_uri_text().encode("utf-8"))
 
