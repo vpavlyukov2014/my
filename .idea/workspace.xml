@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-667">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="-609">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
               </folding>
@@ -62,7 +62,6 @@
       <find>wifi_level_desc</find>
       <find>dict</find>
       <find>secs_to_time</find>
-      <find>d_h</find>
       <find>clock_text</find>
       <find>get_short_format</find>
       <find>print (&quot;req volumio info started&quot;)</find>
@@ -83,6 +82,7 @@
       <find>canvas</find>
       <find>text</find>
       <find>get_device</find>
+      <find>d_h</find>
     </findStrings>
     <replaceStrings>
       <replace>info</replace>
@@ -118,8 +118,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="25" />
-    <option name="width" value="1400" />
-    <option name="height" value="749" />
+    <option name="width" value="1425" />
+    <option name="height" value="783" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -182,10 +182,10 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1400" height="749" extended-state="0" />
+    <frame x="0" y="25" width="1425" height="783" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24501425" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
@@ -359,8 +359,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-667">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="-609">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
           </folding>
