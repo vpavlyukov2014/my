@@ -42,7 +42,6 @@ class Display():
     def start(self):
         try:
             while True:
-                # print("display_stat__{} tick_{}".format(self.volumeo.display, self.volumeo.tick_in_idle))
                 if self.volumeo.display == 'undefined':
                   self.show_loading()
                 elif self.display_status.show_player:
@@ -53,6 +52,12 @@ class Display():
             pass
 
     def show_player(self):
+        if len(self.volumeo.title_uri) > 50:
+            self.show_player_bs()
+        else:
+            self.show_player_simple()
+
+    def show_player_bs(self):
         synchroniser = Synchroniser()
         ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, self.d_h))
         song = Scroller(self.image_composition, ci_song, 75, synchroniser)
@@ -82,6 +87,21 @@ class Display():
                     self.volume_bar(draw, self.volumeo)
         del song
 
+    def show_player_simple(self):
+        with canvas(self.device) as draw:
+            self.wifi_siganl(self.device, draw, self.wifi)
+            self.clock(draw, self.clock_text)
+            if self.volumeo.display == 'main':
+                self.image_composition.refresh()
+                self.track_info(draw, self.volumeo)
+                self.progress_bar(self.device, draw, self.volumeo)
+                self.music_timer(self.device, draw, self.volumeo)
+                self.draw_status_sym(self.device, draw, self.volumeo)
+                time.sleep(1)
+            elif self.volumeo.display == 'volume':
+                self.volume_bar(draw, self.volumeo)
+                time.sleep(0.05)
+        self.volumeo.refresh_info()
 
     def show_clock(self):
          with canvas(self.device) as draw:
@@ -102,7 +122,6 @@ class Display():
         h = 12
         left_padding = 0
         text(draw, (left_padding, h ), volumeo.track_info, fill="white", font=proportional(LCD_FONT))
-
 
     def show_loading(self):
         with canvas(self.device) as draw:
