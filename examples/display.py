@@ -54,6 +54,7 @@ class Display():
 
     def show_player(self):
         synchroniser = Synchroniser()
+        print "title_uri:{}".format(self.volumeo.title_uri)
         ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, self.d_h))
         song = Scroller(self.image_composition, ci_song, 75, synchroniser)
         cycles = 0
