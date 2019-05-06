@@ -101,7 +101,7 @@ class Display():
                 time.sleep(1)
             elif self.volumeo.display == 'volume':
                 self.volume_bar(draw, self.volumeo)
-                time.sleep(0.05)
+                time.sleep(0.025)
         self.volumeo.refresh_info()
 
     def show_clock(self):
