@@ -30,6 +30,7 @@ class Display():
         self.clock_text = ClockText()
         self.clock_font1 = self.make_font("arialbi.ttf", 14)
         self.clock_font2 = self.make_font("ariali.ttf", 60)
+        self.clock_font3 = self.make_font("ariali.ttf", 50)
         self.device = get_device()
         self.clock_w = self.device.width
         self.d_h = (self.device.height - 10)
@@ -77,8 +78,6 @@ class Display():
                     self.draw_status_sym(self.device, draw, self.volumeo)
                 elif self.volumeo.display == 'volume':
                     self.volume_bar(draw, self.volumeo)
-
-
         del song
 
 
@@ -106,10 +105,10 @@ class Display():
     def volume_bar(self, draw, volumeo):
         volumeo.refresh_info()
         volume_text = "vol.{}".format(volumeo.volume_level)
-        vol_w, vol_h = draw.textsize(volume_text, self.clock_font2)
+        vol_w, vol_h = draw.textsize(volume_text, self.clock_font3)
         vol_x = (self.clock_w - vol_w)/2
         vol_y = 10
-        draw.text((vol_x, vol_y), volume_text, fill="white", font=self.clock_font1)
+        draw.text((vol_x, vol_y), volume_text, fill="white", font=self.clock_font3)
 
 
     def music_timer(self, device, draw, volumeo):
