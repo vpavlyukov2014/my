@@ -41,7 +41,10 @@ class Display():
     def start(self):
         try:
             while True:
-                if self.display_status.show_player:
+                print("display_stat__{} tick_{}".format(self.volumeo.display, self.volumeo.tick_in_idle))
+                if self.volumeo.display == 'undefined':
+                  self.show_loading()
+                elif self.display_status.show_player:
                     self.show_player()
                 else:
                     self.show_clock()
@@ -63,13 +66,11 @@ class Display():
                 self.wifi.refresh()
                 self.clock_text.refresh_info()
                 self.display_status.tick()
-                print("display_stat__{} tick_{}".format(self.volumeo.display, self.volumeo.tick_in_idle))
             else:
                 self.i += 1
             with canvas(self.device, background=self.image_composition()) as draw:
                 self.wifi_siganl(self.device, draw, self.wifi)
                 self.clock(draw, self.clock_text)
-
                 if self.volumeo.display == 'main':
                     self.image_composition.refresh()
                     self.track_info(draw, self.volumeo)
@@ -100,6 +101,13 @@ class Display():
         h = 12
         left_padding = 0
         text(draw, (left_padding, h ), volumeo.track_info, fill="white", font=proportional(LCD_FONT))
+
+
+    def show_loading(self):
+        with canvas(self.device) as draw:
+            self.volumeo.refresh_info()
+            draw.text((20, 20), 'Loading...', fill="white", font=self.clock_font2)
+            time.sleep(1)
 
 
     def volume_bar(self, draw, volumeo):
