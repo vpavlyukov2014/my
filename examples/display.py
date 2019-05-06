@@ -76,7 +76,7 @@ class Display():
                     self.music_timer(self.device, draw, self.volumeo)
                     self.draw_status_sym(self.device, draw, self.volumeo)
                 elif self.volumeo.display == 'volume':
-                    self.volume_bar(self.device, draw, self.volumeo)
+                    self.volume_bar(draw, self.volumeo)
 
 
         del song
@@ -104,7 +104,7 @@ class Display():
 
 
     def volume_bar(self, draw, volumeo):
-        self.volumeo.refresh_info()
+        volumeo.refresh_info()
         vol_w, vol_h = draw.textsize(volumeo.volume_level, self.clock_font2)
         vol_x = (self.clock_w - vol_w)/2
         vol_y = vol_h - 10
