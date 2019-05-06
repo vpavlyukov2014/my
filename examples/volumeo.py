@@ -8,6 +8,9 @@ import requests
 class Volumeo():
     def __init__(self):
         self.refresh_info()
+        self.tick_in_idle = 10
+        self.volume_level = self.get_volume_level()
+        self.old_volume_level = self.get_volume_level()
 
     def refresh_info(self):
         self.volumeo_info = self.get_volumeo_info()
@@ -18,6 +21,8 @@ class Volumeo():
         self.status = self.get_status()
         self.completed_procents = self.get_completed_proc()
         self.title_uri = self.get_title_uri()
+        self.volume_level = self.get_volume_level()
+        self.display = self.display_type()
 
     def get_volumeo_info(self):
         try:
@@ -25,21 +30,28 @@ class Volumeo():
             vol_status = req.json()
         except requests.exceptions.RequestException as e:
             print e
-            vol_status = {
-                "status":"stop",
-                "position":0,
-                "title":"-",
-                "albumart":"-",
-                "uri":"-",
-                "trackType":"-",
-                "seek":0,
-                "samplerate":"",
-                "bitdepth":"",
-                "channels":0,
-                "volume":0,
-                "stream":"-",
-                "service":"-"}
+            vol_status = {}
         return vol_status
+
+    def display_type(self):
+        pleer_status = self.status
+        if pleer_status in ['play', 'stop', 'pause']:
+            if self.volume_level != self.old_volume_level:
+                self.old_volume_level = self.volume_level
+                self.tick_in_idle = 0
+                display = 'volume'
+            elif self.tick_in_idle < 10:
+                self.tick_in_idle += 1
+                display = 'volume'
+            else:
+                display = 'main'
+        else:
+            display = 'not_ready'
+        return display
+
+    def get_volume_level(self):
+        info = self.volumeo_info
+        return (int(info.get("volume", 0)))
 
     def time_elapsed(self):
         info = self.volumeo_info
@@ -59,7 +71,7 @@ class Volumeo():
 
     def get_m_title(self):
         info = self.volumeo_info
-        return info.get("title", '')
+        return info.get("title", '-')
 
     def artist(self):
         info = self.volumeo_info
