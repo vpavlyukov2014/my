@@ -139,5 +139,5 @@ class Volumeo():
             return 0
 
     def get_title_uri(self):
-        return "{} {}".format(self.get_m_title().encode("utf-8"), self.get_uri_text().encode("utf-8"))
+        return "{}/{}".format(self.get_m_title().encode("utf-8"), self.get_uri_text().encode("utf-8"))
 
