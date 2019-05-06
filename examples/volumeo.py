@@ -51,7 +51,6 @@ class Volumeo():
                 display = 'main'
         else:
             display = 'undefined'
-        display = 'undefined'
         return display
 
     def get_volume_level(self):
