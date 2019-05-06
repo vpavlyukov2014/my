@@ -7,10 +7,13 @@ import requests
 
 class Volumeo():
     def __init__(self):
-        self.refresh_info()
+        self.volumeo_info = self.get_volumeo_info()
+        self.volume_level = self.get_volume_level()
+        self.status = self.get_status()
         self.tick_in_idle = 10
         self.volume_level = self.get_volume_level()
         self.old_volume_level = self.get_volume_level()
+        self.refresh_info()
 
     def refresh_info(self):
         self.volumeo_info = self.get_volumeo_info()
@@ -22,12 +25,6 @@ class Volumeo():
         self.completed_procents = self.get_completed_proc()
         self.title_uri = self.get_title_uri()
         self.volume_level = self.get_volume_level()
-
-        try:
-            self.old_volume_level
-        except:
-            self.old_volume_level = self.volume_level
-
         self.display = self.display_type()
 
     def get_volumeo_info(self):
