@@ -107,7 +107,7 @@ class Display():
     def show_loading(self):
         with canvas(self.device) as draw:
             self.volumeo.refresh_info()
-            loading_message = ('Loading {}', format(self.router_val))
+            loading_message = "Loading {}".format(self.router_val())
             draw.text((10, 10), loading_message, fill="white", font=self.clock_font3)
             time.sleep(1)
 
