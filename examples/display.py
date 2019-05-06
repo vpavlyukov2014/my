@@ -30,7 +30,7 @@ class Display():
         self.clock_text = ClockText()
         self.clock_font1 = self.make_font("arialbi.ttf", 14)
         self.clock_font2 = self.make_font("ariali.ttf", 60)
-        self.clock_font3 = self.make_font("ariali.ttf", 50)
+        self.clock_font3 = self.make_font("ariali.ttf", 40)
         self.device = get_device()
         self.clock_w = self.device.width
         self.d_h = (self.device.height - 10)
