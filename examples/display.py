@@ -106,7 +106,7 @@ class Display():
     def show_loading(self):
         with canvas(self.device) as draw:
             self.volumeo.refresh_info()
-            draw.text((20, 20), 'Loading...', fill="white", font=self.clock_font2)
+            draw.text((15, 10), 'Loading...', fill="white", font=self.clock_font3)
             time.sleep(1)
 
 
