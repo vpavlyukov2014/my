@@ -105,7 +105,7 @@ class Display():
 
     def volume_bar(self, draw, volumeo):
         volumeo.refresh_info()
-        volume_text = "vol.{}".format(volumeo.volume_level.encode("utf-8"))
+        volume_text = "vol.{}".format(volumeo.volume_level)
         vol_w, vol_h = draw.textsize(volume_text, self.clock_font2)
         vol_x = (self.clock_w - vol_w)/2
         vol_y = vol_h - 10
