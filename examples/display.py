@@ -42,7 +42,7 @@ class Display():
             while True:
                 if self.display_status.show_player:
                     synchroniser = Synchroniser()
-                    ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, d_h))
+                    ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, self.d_h))
                     song = Scroller(self.image_composition, ci_song, 75, synchroniser)
                     cycles = 0
                     while cycles < 3:
