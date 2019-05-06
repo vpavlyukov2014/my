@@ -66,13 +66,19 @@ class Display():
             else:
                 self.i += 1
             with canvas(self.device, background=self.image_composition()) as draw:
-                self.image_composition.refresh()
                 self.wifi_siganl(self.device, draw, self.wifi)
                 self.clock(draw, self.clock_text)
-                self.track_info(draw, self.volumeo)
-                self.progress_bar(self.device, draw, self.volumeo)
-                self.music_timer(self.device, draw, self.volumeo)
-                self.draw_status_sym(self.device, draw, self.volumeo)
+
+                if self.volumeo.display == 'main':
+                    self.image_composition.refresh()
+                    self.track_info(draw, self.volumeo)
+                    self.progress_bar(self.device, draw, self.volumeo)
+                    self.music_timer(self.device, draw, self.volumeo)
+                    self.draw_status_sym(self.device, draw, self.volumeo)
+                elif self.volumeo.display == 'volume':
+                    self.volume_bar(self.device, draw, self.volumeo)
+
+
         del song
 
 
@@ -94,7 +100,15 @@ class Display():
     def track_info(self, draw, volumeo):
         h = 12
         left_padding = 0
-        text(draw, (left_padding, h ), volumeo.track_info, fill="white", font=proportional(LCD_FONT) )
+        text(draw, (left_padding, h ), volumeo.track_info, fill="white", font=proportional(LCD_FONT))
+
+
+    def volume_bar(self, draw, volumeo):
+        self.volumeo.refresh_info()
+        vol_w, vol_h = draw.textsize(volumeo.volume_level, self.clock_font2)
+        vol_x = (self.clock_w - vol_w)/2
+        vol_y = vol_h - 10
+        draw.text((vol_x, vol_y), volumeo.volume_level, fill="white", font=self.clock_font2)
 
 
     def music_timer(self, device, draw, volumeo):
