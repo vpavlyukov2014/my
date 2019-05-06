@@ -129,7 +129,8 @@ class Display():
             self.volumeo.refresh_info()
             loading_message = "Loading {}".format(self.router_val())
             draw.text((10, 10), loading_message, fill="white", font=self.clock_font3)
-            time.sleep(0.5)
+        print 'ddfdf'
+        time.sleep(0.5)
 
 
     def volume_bar(self, draw, volumeo):
