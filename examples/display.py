@@ -42,7 +42,7 @@ class Display():
     def start(self):
         try:
             while True:
-                print("display_stat__{} tick_{}".format(self.volumeo.display, self.volumeo.tick_in_idle))
+                # print("display_stat__{} tick_{}".format(self.volumeo.display, self.volumeo.tick_in_idle))
                 if self.volumeo.display == 'undefined':
                   self.show_loading()
                 elif self.display_status.show_player:
@@ -54,6 +54,7 @@ class Display():
 
     def show_player(self):
         synchroniser = Synchroniser()
+        print "dfdf"
         print "title_uri:{}".format(self.volumeo.title_uri)
         ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, self.d_h))
         song = Scroller(self.image_composition, ci_song, 75, synchroniser)
