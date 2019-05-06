@@ -108,8 +108,8 @@ class Display():
         volume_text = "vol.{}".format(volumeo.volume_level)
         vol_w, vol_h = draw.textsize(volume_text, self.clock_font2)
         vol_x = (self.clock_w - vol_w)/2
-        vol_y = vol_h - 10
-        text(draw, (vol_x, vol_y), volume_text, fill="white", font=self.clock_font2)
+        vol_y = 10
+        draw.text((vol_x, vol_y), volume_text, fill="white", font=self.clock_font1)
 
 
     def music_timer(self, device, draw, volumeo):
