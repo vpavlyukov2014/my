@@ -19,7 +19,7 @@ class ClockText():
 
 
     def get_text_data(self):
-        return self.time_now.strftime("%d %B %Y  %A  %H:%M:%S ")
+        return self.time_now.strftime("%d %B %Y  %A  %H:%M ")
 
 
     def get_short_format(self):

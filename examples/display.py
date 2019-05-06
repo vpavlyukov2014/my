@@ -91,6 +91,7 @@ class Display():
         with canvas(self.device) as draw:
             self.wifi_siganl(self.device, draw, self.wifi)
             self.clock(draw, self.clock_text)
+            text(draw, (0, self.d_h), self.volumeo.title_uri, fill="white", font=proportional(LCD_FONT) )
             if self.volumeo.display == 'main':
                 self.image_composition.refresh()
                 self.track_info(draw, self.volumeo)
