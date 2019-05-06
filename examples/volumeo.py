@@ -67,7 +67,7 @@ class Volumeo():
 
     def get_uri_text(self):
         info = self.volumeo_info
-        return (info.get("uri", ''))
+        return (info.get("uri", '-'))
 
     def get_status(self):
         info = self.volumeo_info
@@ -79,23 +79,23 @@ class Volumeo():
 
     def artist(self):
         info = self.volumeo_info
-        return info.get("artist", '')
+        return info.get("artist", '-')
 
     def track_type(self):
         info = self.volumeo_info
-        return info.get("trackType", '')
+        return info.get("trackType", '-')
 
     def bitrate(self):
         info = self.volumeo_info
-        return info.get("samplerate", '')
+        return info.get("samplerate", '-')
 
     def bitdepth(self):
         info = self.volumeo_info
-        return info.get("bitdepth", '')
+        return info.get("bitdepth", '-')
 
     def stream(self):
         info = self.volumeo_info
-        return info.get("stream", '')
+        return info.get("stream", '-')
 
     def random_play(self):
         info = self.volumeo_info
