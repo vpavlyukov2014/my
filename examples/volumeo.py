@@ -7,10 +7,11 @@ import requests
 
 class Volumeo():
     def __init__(self):
+        self.volume_idle = 100
         self.volumeo_info = self.get_volumeo_info()
         self.volume_level = self.get_volume_level()
         self.status = self.get_status()
-        self.tick_in_idle = 10
+        self.tick_in_idle = self.volume_idle
         self.volume_level = self.get_volume_level()
         self.old_volume_level = self.get_volume_level()
         self.refresh_info()
@@ -43,7 +44,7 @@ class Volumeo():
                 self.old_volume_level = self.volume_level
                 self.tick_in_idle = 0
                 display = 'volume'
-            elif self.tick_in_idle < 10:
+            elif self.tick_in_idle < self.volume_idle:
                 self.tick_in_idle += 1
                 display = 'volume'
             else:
