@@ -104,7 +104,7 @@ class Display():
 
     def volume_bar(self, draw, volumeo):
         volumeo.refresh_info()
-        volume_text = "громкость: {}".format(volumeo.volume_level)
+        volume_text = "volume: {}".format(volumeo.volume_level)
         vol_w, vol_h = draw.textsize(volume_text, self.clock_font3)
         vol_x = (self.clock_w - vol_w)/2
         vol_y = 10
