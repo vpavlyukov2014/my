@@ -25,61 +25,61 @@ class Display():
 
     def __init__(self):
         print 'Start display'
+        self.volumeo = Volumeo()
+        self.wifi = Wifi()
+        self.clock_text = ClockText()
+        self.clock_font1 = self.make_font("arialbi.ttf", 14)
+        self.clock_font2 = self.make_font("ariali.ttf", 60)
+        self.device = get_device()
+        self.clock_w = self.device.width
+        self.d_h = (self.device.height - 10)
+        self.image_composition = ImageComposition(self.device)
+        self.display_status = Status(self.volumeo)
+        self.i = 0
 
     def start(self):
-        volumeo = Volumeo()
-        wifi = Wifi()
-        clock_text = ClockText()
-        clock_font1 = self.make_font("arialbi.ttf", 14)
-        clock_font2 = self.make_font("ariali.ttf", 60)
-        device = get_device()
-        clock_w = device.width
-        d_h = (device.height - 10)
-        image_composition = ImageComposition(device)
-        display_status = Status(volumeo)
-        i = 0
         try:
             while True:
-                if display_status.show_player:
+                if self.display_status.show_player:
                     synchroniser = Synchroniser()
-                    ci_song = ComposableImage(TextImage(device, volumeo.title_uri).image, position=(0, d_h))
-                    song = Scroller(image_composition, ci_song, 75, synchroniser)
+                    ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, d_h))
+                    song = Scroller(self.image_composition, ci_song, 75, synchroniser)
                     cycles = 0
                     while cycles < 3:
                         song.tick()
                         time.sleep(0.025)
                         cycles = song.get_cycles()
-                        if i == 10:
-                            i = 0
-                            volumeo.refresh_info()
-                            wifi.refresh()
-                            clock_text.refresh_info()
-                            display_status.tick()
-                            print("display_stat__{} tick_{}".format(volumeo.display, volumeo.tick_in_idle))
+                        if self.i == 10:
+                            self.i = 0
+                            self.volumeo.refresh_info()
+                            self.wifi.refresh()
+                            self.clock_text.refresh_info()
+                            self.display_status.tick()
+                            print("display_stat__{} tick_{}".format(self.volumeo.display, self.volumeo.tick_in_idle))
                         else:
-                            i += 1
-                        with canvas(device, background=image_composition()) as draw:
-                            image_composition.refresh()
-                            self.wifi_siganl(device, draw, wifi)
-                            self.clock(draw, clock_text)
-                            self.track_info(draw, volumeo)
-                            self.progress_bar(device, draw, volumeo)
-                            self.music_timer(device, draw, volumeo)
-                            self.draw_status_sym(device, draw, volumeo)
+                            self.i += 1
+                        with canvas(self.device, background=self.image_composition()) as draw:
+                            self.image_composition.refresh()
+                            self.wifi_siganl(self.device, draw, self.wifi)
+                            self.clock(draw, self.clock_text)
+                            self.track_info(draw, self.volumeo)
+                            self.progress_bar(self.device, draw, self.volumeo)
+                            self.music_timer(self.device, draw, self.volumeo)
+                            self.draw_status_sym(self.device, draw, self.volumeo)
                     del song
                 else:
-                    with canvas(device) as draw:
-                        clock_text.refresh_info()
-                        volumeo.refresh_info()
-                        clock_w1, clock_h1 = draw.textsize(clock_text.date_text, clock_font1)
-                        clock_w2, clock_h2 = draw.textsize(clock_text.short_format, clock_font2)
-                        clock_x1 = (clock_w - clock_w1)/2
+                    with canvas(self.device) as draw:
+                        self.clock_text.refresh_info()
+                        self.volumeo.refresh_info()
+                        clock_w1, clock_h1 = draw.textsize(self.clock_text.date_text, self.clock_font1)
+                        clock_w2, clock_h2 = draw.textsize(self.clock_text.short_format, self.clock_font2)
+                        clock_x1 = (self.clock_w - clock_w1)/2
                         clock_y1 = 0
                         clock_y2 = clock_h1 - 8
-                        clock_x2 = (clock_w - clock_w2)/2
-                        draw.text((clock_x1, clock_y1), clock_text.date_text, fill="white", font=clock_font1)
-                        draw.text((clock_x2, clock_y2), clock_text.short_format, fill="white", font=clock_font2)
-                        display_status.tick()
+                        clock_x2 = (self.clock_w - clock_w2)/2
+                        draw.text((clock_x1, clock_y1), self.clock_text.date_text, fill="white", font=self.clock_font1)
+                        draw.text((clock_x2, clock_y2), self.clock_text.short_format, fill="white", font=self.clock_font2)
+                        self.display_status.tick()
                         time.sleep(1)
 
         except KeyboardInterrupt:

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/display.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="164" column="65" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
+            <state relative-caret-position="-667">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
               </folding>
@@ -55,14 +53,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time.sleep</find>
-      <find>artist</find>
       <find>i)</find>
       <find>i % 2</find>
       <find>math</find>
       <find>CPU_Load</find>
       <find>volumeo_info</find>
-      <find>canvas</find>
       <find>get_wifi_info</find>
       <find>wifi_level_desc</find>
       <find>dict</find>
@@ -85,6 +80,9 @@
       <find>wifi_siganl</find>
       <find>make_font</find>
       <find>volumeo</find>
+      <find>canvas</find>
+      <find>text</find>
+      <find>get_device</find>
     </findStrings>
     <replaceStrings>
       <replace>info</replace>
@@ -361,8 +359,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="164" column="65" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
+        <state relative-caret-position="-667">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
           </folding>
