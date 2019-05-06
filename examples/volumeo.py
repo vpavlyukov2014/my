@@ -22,6 +22,12 @@ class Volumeo():
         self.completed_procents = self.get_completed_proc()
         self.title_uri = self.get_title_uri()
         self.volume_level = self.get_volume_level()
+
+        try:
+            self.old_volume_level
+        except NameError:
+            self.old_volume_level = self.volume_level
+
         self.display = self.display_type()
 
     def get_volumeo_info(self):
