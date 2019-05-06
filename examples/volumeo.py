@@ -25,7 +25,7 @@ class Volumeo():
 
         try:
             self.old_volume_level
-        except NameError:
+        except:
             self.old_volume_level = self.volume_level
 
         self.display = self.display_type()
