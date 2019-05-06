@@ -220,8 +220,8 @@ class Display():
 
 
     def router_val(self):
-        begs = ['->', '-->', '--->', '---->']
-        if self.beg_val < 4:
+        begs = ['>', '->', '-->', '--->', '---->', '---<', '--<', '-<', '<']
+        if self.beg_val < 8:
             res = begs[self.beg_val]
             self.beg_val += 1
         else:
