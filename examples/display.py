@@ -52,7 +52,7 @@ class Display():
             pass
 
     def show_player(self):
-        if len(self.volumeo.title_uri) > 50:
+        if len(self.volumeo.title_uri) > 50000:
             self.show_player_bs()
         else:
             self.show_player_simple()
