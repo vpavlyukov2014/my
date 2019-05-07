@@ -12,10 +12,6 @@ from luma.core.legacy import text
 from luma.core.legacy.font import proportional, LCD_FONT
 from PIL import ImageFont
 
-
-from scroll import TextImage
-from scroll import Synchroniser
-from scroll import Scroller
 from volumeo import Volumeo
 from wifi_info import Wifi
 from clock_text import ClockText
@@ -34,7 +30,6 @@ class Display():
         self.device = get_device()
         self.clock_w = self.device.width
         self.d_h = (self.device.height - 10)
-        self.image_composition = ImageComposition(self.device)
         self.display_status = Status(self.volumeo)
         self.i = 0
         self.beg_val = 0
@@ -52,48 +47,11 @@ class Display():
             pass
 
     def show_player(self):
-        if len(self.volumeo.title_uri) > 50000:
-            self.show_player_bs()
-        else:
-            self.show_player_simple()
-
-    def show_player_bs(self):
-        synchroniser = Synchroniser()
-        ci_song = ComposableImage(TextImage(self.device, self.volumeo.title_uri).image, position=(0, self.d_h))
-        song = Scroller(self.image_composition, ci_song, 75, synchroniser)
-        cycles = 0
-        while cycles < 3:
-            song.tick()
-            time.sleep(0.025)
-            cycles = song.get_cycles()
-            if self.i == 10:
-                self.i = 0
-                self.volumeo.refresh_info()
-                self.wifi.refresh()
-                self.clock_text.refresh_info()
-                self.display_status.tick()
-            else:
-                self.i += 1
-            with canvas(self.device, background=self.image_composition()) as draw:
-                self.wifi_siganl(self.device, draw, self.wifi)
-                self.clock(draw, self.clock_text)
-                if self.volumeo.display == 'main':
-                    self.image_composition.refresh()
-                    self.track_info(draw, self.volumeo)
-                    self.progress_bar(self.device, draw, self.volumeo)
-                    self.music_timer(self.device, draw, self.volumeo)
-                    self.draw_status_sym(self.device, draw, self.volumeo)
-                elif self.volumeo.display == 'volume':
-                    self.volume_bar(draw, self.volumeo)
-        del song
-
-    def show_player_simple(self):
         with canvas(self.device) as draw:
             self.wifi_siganl(self.device, draw, self.wifi)
             self.clock(draw, self.clock_text)
             text(draw, (0, self.d_h), self.volumeo.title_uri, fill="white", font=proportional(LCD_FONT) )
             if self.volumeo.display == 'main':
-                self.image_composition.refresh()
                 self.track_info(draw, self.volumeo)
                 self.progress_bar(self.device, draw, self.volumeo)
                 self.music_timer(self.device, draw, self.volumeo)
