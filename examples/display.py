@@ -61,6 +61,9 @@ class Display():
                 self.volume_bar(draw, self.volumeo)
                 time.sleep(0.025)
         self.volumeo.refresh_info()
+        self.wifi.refresh()
+        self.clock_text.refresh_info()
+        self.display_status.tick()
 
     def show_clock(self):
          with canvas(self.device) as draw:
