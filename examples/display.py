@@ -41,10 +41,10 @@ class Display():
                 if self.volumeo.display == 'undefined':
                   self.show_loading()
                 elif self.display_status.show_player:
-                    self.power_on
+                    # self.power_on
                     self.show_player()
                 else:
-                    self.power_off
+                    # self.power_off
                     self.show_clock()
         except KeyboardInterrupt:
             pass
