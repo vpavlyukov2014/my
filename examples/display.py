@@ -15,7 +15,7 @@ from volumeo import Volumeo
 from wifi_info import Wifi
 from clock_text import ClockText
 from status import Status
-from power_relay import PowerRelay
+# from power_relay import PowerRelay
 
 class Display():
 
@@ -24,7 +24,7 @@ class Display():
         self.volumeo = Volumeo()
         self.wifi = Wifi()
         self.clock_text = ClockText()
-        self.power_relay = PowerRelay()
+        # self.power_relay = PowerRelay()
         self.clock_font1 = self.make_font("arialbi.ttf", 14)
         self.clock_font2 = self.make_font("ariali.ttf", 60)
         self.clock_font3 = self.make_font("ariali.ttf", 40)
@@ -41,10 +41,10 @@ class Display():
                 if self.volumeo.display == 'undefined':
                   self.show_loading()
                 elif self.display_status.show_player:
-                    self.power_on
+                    # self.power_on
                     self.show_player()
                 else:
-                    self.power_off
+                    # self.power_off
                     self.show_clock()
         except KeyboardInterrupt:
             pass
@@ -83,11 +83,11 @@ class Display():
             self.display_status.tick()
             time.sleep(1)
 
-    def power_on(self):
-        self.power_relay.power_on()
-
-    def power_off(self):
-        self.power_relay.power_off()
+    # def power_on(self):
+    #     self.power_relay.power_on()
+    #
+    # def power_off(self):
+    #     self.power_relay.power_off()
 
     def track_info(self, draw, volumeo):
         h = 12
