@@ -41,10 +41,10 @@ class Display():
                 if self.volumeo.display == 'undefined':
                   self.show_loading()
                 elif self.display_status.show_player:
-                    # self.power_on
+                    self.power_on
                     self.show_player()
                 else:
-                    # self.power_off
+                    self.power_off
                     self.show_clock()
         except KeyboardInterrupt:
             pass
@@ -83,11 +83,11 @@ class Display():
             self.display_status.tick()
             time.sleep(1)
 
-    # def power_on(self):
-        # self.power_relay.power_on()
+    def power_on(self):
+        self.power_relay.power_on()
 
-    # def power_of(self):
-        # self.power_relay.power_off()
+    def power_of(self):
+        self.power_relay.power_off()
 
     def track_info(self, draw, volumeo):
         h = 12

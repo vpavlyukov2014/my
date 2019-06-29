@@ -6,9 +6,9 @@ import RPi.GPIO as GPIO
 class PowerRelay():
 
     def __init__(self):
-        self.channel = 21
+        self.channel = 20
         GPIO.setmode(GPIO.BCM)
-        # GPIO.setup(self.channel, GPIO.OUT)
+        GPIO.setup(self.channel, GPIO.OUT)
 
     def power_on(self):
         GPIO.output(self.channel, GPIO.HIGH)
