@@ -86,7 +86,7 @@ class Display():
     def power_on(self):
         self.power_relay.power_on()
 
-    def power_of(self):
+    def power_off(self):
         self.power_relay.power_off()
 
     def track_info(self, draw, volumeo):
