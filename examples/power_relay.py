@@ -11,8 +11,9 @@ class PowerRelay():
         GPIO.setup(self.channel, GPIO.OUT)
 
     def power_on(self):
-        GPIO.output(self.channel, GPIO.HIGH)
+        GPIO.output(self.channel, GPIO.LOW)
 
     def power_off(self):
-        GPIO.output(self.channel, GPIO.LOW)
+        GPIO.output(self.channel, GPIO.HIGH)
+
 
