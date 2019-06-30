@@ -120,7 +120,7 @@ class Volumeo():
       return time_text
 
     def get_track_info(self):
-        artist_name_data = self.artist()
+        artist_name_data = self.artist().encode("utf-8")
         artist_name  = (artist_name_data[:31] + '..') if len(artist_name_data) > 33 else artist_name_data
         return "{:35s}  {}/{}/{}".format(artist_name, self.bitrate(), self.bitdepth(), self.track_type())
 
