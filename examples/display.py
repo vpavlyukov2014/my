@@ -24,7 +24,7 @@ class Display():
         self.volumeo = Volumeo()
         self.wifi = Wifi()
         self.clock_text = ClockText()
-        # self.power_relay = PowerRelay()
+        self.power_relay = PowerRelay()
         self.clock_font1 = self.make_font("arialbi.ttf", 14)
         self.clock_font2 = self.make_font("ariali.ttf", 60)
         self.clock_font3 = self.make_font("ariali.ttf", 40)
