@@ -34,6 +34,7 @@ class Display():
         self.display_status = Status(self.volumeo)
         self.i = 0
         self.beg_val = 0
+        self.power_on
 
     def start(self):
         try:
