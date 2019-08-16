@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/volumeo.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/volumeo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+            <state relative-caret-position="-2192">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
               </folding>
@@ -37,8 +37,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#48#83#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/volumeo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1695">
-              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+            <state relative-caret-position="174">
+              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -97,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/clock_text.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="315">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#48#63#0" expanded="true" />
@@ -117,8 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>volumeo_info</find>
-      <find>get_wifi_info</find>
       <find>wifi_level_desc</find>
       <find>secs_to_time</find>
       <find>clock_text</find>
@@ -144,9 +145,11 @@
       <find>d_h</find>
       <find>ci_s</find>
       <find>volume_idle</find>
-      <find>show_player</find>
       <find>pri</find>
       <find>dict</find>
+      <find>power_off</find>
+      <find>show_player</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>info</replace>
@@ -176,11 +179,11 @@
         <option value="$PROJECT_DIR$/examples/clock_text.py" />
         <option value="$USER_HOME$/Downloads/relay.py" />
         <option value="$PROJECT_DIR$/examples/power_relay.py" />
-        <option value="$PROJECT_DIR$/examples/volumeo.py" />
         <option value="$PROJECT_DIR$/examples/rotary_encoder_right.py" />
         <option value="$PROJECT_DIR$/examples/main.py" />
         <option value="$PROJECT_DIR$/examples/websocet_client.py" />
         <option value="$PROJECT_DIR$/examples/test.py" />
+        <option value="$PROJECT_DIR$/examples/volumeo.py" />
         <option value="$PROJECT_DIR$/examples/display.py" />
       </list>
     </option>
@@ -386,10 +389,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/volumeo.py">
+    <entry file="file://$PROJECT_DIR$/examples/websocet_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#48#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#47#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -419,28 +445,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/clock_text.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="315">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#48#63#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/websocet_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -451,20 +460,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/test.py">
+    <entry file="file://$PROJECT_DIR$/examples/volumeo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="174">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+        <state relative-caret-position="-2192">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
           </folding>

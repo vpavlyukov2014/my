@@ -33,6 +33,7 @@ class Volumeo():
             req = requests.get(url = "http://localhost:3000/api/v1/getstate", params =  {'address':'xxx'})
             vol_status = req.json()
         except requests.exceptions.RequestException as e:
+            print 'exeption volumio req'
             print e
             vol_status = {}
         return vol_status

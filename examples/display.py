@@ -39,7 +39,8 @@ class Display():
         try:
             while True:
                 if self.volumeo.display == 'undefined':
-                  self.show_loading()
+                    self.power_off
+                    self.show_loading()
                 elif self.display_status.show_player:
                     self.power_on
                     self.show_player()
