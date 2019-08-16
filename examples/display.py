@@ -36,15 +36,20 @@ class Display():
         self.beg_val = 0
 
     def start(self):
+        print 'Start display start'
         try:
             while True:
+                print 'while true'
                 if self.volumeo.display == 'undefined':
+                    print 'undefined'
                     self.power_off
                     self.show_loading()
                 elif self.display_status.show_player:
+                    print 'show player'
                     self.power_on
                     self.show_player()
                 else:
+                    print 'clock show'
                     self.power_off
                     self.show_clock()
         except KeyboardInterrupt:
