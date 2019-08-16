@@ -41,15 +41,12 @@ class Display():
             while True:
                 print 'while true'
                 if self.volumeo.display == 'undefined':
-                    print 'undefined'
                     self.power_off()
                     self.show_loading()
                 elif self.display_status.show_player:
-                    print 'show player'
                     self.power_on()
                     self.show_player()
                 else:
-                    print 'clock show'
                     self.power_off()
                     self.show_clock()
         except KeyboardInterrupt:
@@ -90,11 +87,9 @@ class Display():
             time.sleep(1)
 
     def power_on(self):
-        print 'relay on'
         self.power_relay.power_on()
 
     def power_off(self):
-        print 'relay off'
         self.power_relay.power_off()
 
     def track_info(self, draw, volumeo):
