@@ -34,7 +34,6 @@ class Display():
         self.display_status = Status(self.volumeo)
         self.i = 0
         self.beg_val = 0
-        self.power_on
 
     def start(self):
         try:
@@ -85,9 +84,11 @@ class Display():
             time.sleep(1)
 
     def power_on(self):
+        print 'relay on'
         self.power_relay.power_on()
 
     def power_off(self):
+        print 'relay off'
         self.power_relay.power_off()
 
     def track_info(self, draw, volumeo):
