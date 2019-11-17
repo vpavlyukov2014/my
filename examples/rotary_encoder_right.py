@@ -38,5 +38,4 @@ class RotaryEncoderRight:
 
     def _switchCallback(self, pin):
         if GPIO.input(self.sw) == 0:
-            self.switchCallback()
             self.vol_commands.toggle_play()
