@@ -12,7 +12,7 @@ class RotaryEncoderRight():
         self.dt = 26
         self.sw = 13
 
-        vol_commands = VolumeoCommands()
+        self.vol_commands = VolumeoCommands()
 
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.clk, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
