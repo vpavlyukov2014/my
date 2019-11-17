@@ -22,11 +22,11 @@ class VolumeoCommands():
         print vol_status
 
     def vol_plus(self):
-        command = 'plus'
+        command = 'volume&volume=plus'
         self.send_volumeo_command(command)
 
     def vol_minus(self):
-        command = 'minus'
+        command = 'volume&volume=minus'
         self.send_volumeo_command(command)
 
     def toggle_play(self):
