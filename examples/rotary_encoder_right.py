@@ -29,10 +29,14 @@ class RotaryEncoderRight():
                 if clkState != self.clkLastState:
                     if dtState != clkState:
                             self.counter += 1
-                            self.vol_commands.vol_plus()
+                            if self.counter > 1:
+                                self.vol_commands.vol_plus()
+                                self.counter = 0
                     else:
                             self.counter -= 1
-                            self.vol_commands.vol_minus()
+                            if self.counter < -1:
+                                self.vol_commands.vol_minus()
+                                self.counter = 0
                     print self.counter
                 self.clkLastState = clkState
                 sleep(0.01)

@@ -32,3 +32,11 @@ class VolumeoCommands():
     def toggle_play(self):
         command = 'toggle'
         self.send_volumeo_command(command)
+
+    def toggle_next(self):
+        command = 'next'
+        self.send_volumeo_command(command)
+
+    def toggle_prev(self):
+        command = 'prev'
+        self.send_volumeo_command(command)

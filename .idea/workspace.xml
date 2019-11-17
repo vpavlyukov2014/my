@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8035e0ee-c278-4ccf-acaa-976017be4013" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/examples/rotary_encoder_right.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rotary_encoder_right.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/volumio_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/volumio_commands.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,20 +64,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/volumio_commands.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="600">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/rotary_encoder_right.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="25" />
+            <state relative-caret-position="536">
+              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
               <folding>
                 <element signature="e#48#68#0" expanded="true" />
               </folding>
@@ -159,8 +160,8 @@
         <option value="$PROJECT_DIR$/examples/volumeo.py" />
         <option value="$PROJECT_DIR$/examples/display.py" />
         <option value="$PROJECT_DIR$/examples/test.py" />
-        <option value="$PROJECT_DIR$/examples/rotary_encoder_right.py" />
         <option value="$PROJECT_DIR$/examples/volumio_commands.py" />
+        <option value="$PROJECT_DIR$/examples/rotary_encoder_right.py" />
       </list>
     </option>
   </component>
@@ -443,20 +444,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/rotary_encoder_right.py">
+    <entry file="file://$PROJECT_DIR$/examples/volumio_commands.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="25" />
-          <folding>
-            <element signature="e#48#68#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/volumio_commands.py">
+    <entry file="file://$PROJECT_DIR$/examples/rotary_encoder_right.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="536">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+          <folding>
+            <element signature="e#48#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
