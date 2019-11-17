@@ -28,15 +28,15 @@ class RotaryEncoderRight:
         GPIO.remove_event_detect(self.sw)
         GPIO.cleanup()
 
-    def _clockCallback(self):
+    def _clockCallback(self, pin):
         if GPIO.input(self.clk) == 0:
-            data = GPIO.input(self.dataPin)
+            data = GPIO.input(self.dt)
             if data == 1:
                 self.vol_commands.vol_minus()
             else:
                 self.vol_commands.vol_plus()
 
-    def _switchCallback(self):
+    def _switchCallback(self, pin):
         if GPIO.input(self.sw) == 0:
             self.switchCallback()
             self.vol_commands.toggle_play()
