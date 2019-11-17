@@ -13,6 +13,7 @@ class RotaryEncoderRight:
         self.sw = 13
 
         self.vol_commands = VolumeoCommands()
+        self.lastDirection = -1
         GPIO.setmode(GPIO.BCM)
 
         GPIO.setup(self.clk, GPIO.IN)
@@ -31,7 +32,9 @@ class RotaryEncoderRight:
     def _clockCallback(self, pin):
         if GPIO.input(self.clk) == 0:
             data = GPIO.input(self.dt)
-            if data == 1:
+            if data != self.lastDirection:
+                self.lastDirection = data
+            elif data == 1:
                 self.vol_commands.vol_minus()
             else:
                 self.vol_commands.vol_plus()
