@@ -2,42 +2,18 @@
 # -*- coding: utf-8 -*-
 import time
 
-from power_relay import PowerRelay
+from rotary_encoder_right import RotaryEncoderRight
 
 def main():
-    power_relay = PowerRelay()
+    encoder = RotaryEncoderRight()
     print 'Start'
     time.sleep(10)
 
-    print 'relay on'
-    power_relay.power_on()
+    print 'encoder on'
+    encoder.start()
     time.sleep(10)
 
-    print 'relay off'
-    power_relay.power_off()
-    time.sleep(10)
-
-    print 'relay on'
-    power_relay.power_on()
-    time.sleep(10)
-
-    print 'relay on'
-    power_relay.power_on()
-    time.sleep(10)
-
-    print 'relay off'
-    power_relay.power_off()
-    time.sleep(10)
-
-    print 'relay off'
-    power_relay.power_off()
-    time.sleep(10)
-
-    print 'relay on'
-    power_relay.power_on()
-    time.sleep(10)
-
-
+    print 'encoder off'
 
 if __name__ == "__main__":
     try:
