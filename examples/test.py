@@ -1,19 +1,19 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import time
-
+from time import sleep
 from rotary_encoder_right import RotaryEncoderRight
 
 def main():
+
     encoder = RotaryEncoderRight()
     print 'Start'
-    time.sleep(10)
-
     print 'encoder on'
     encoder.start()
-    time.sleep(10)
-
-    print 'encoder off'
+    try:
+        while True:
+            sleep(0.01)
+    finally:
+        encoder.stop()
 
 if __name__ == "__main__":
     try:
