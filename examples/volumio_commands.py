@@ -11,6 +11,7 @@ class VolumeoCommands():
 
     def send_volumeo_command(self, command):
         url = "http://localhost:3000/api/v1/commands/?cmd={}".format(command)
+        print url
         try:
             req = requests.get(url = url, params =  {'address':'xxx'})
             vol_status = req.json()
@@ -18,7 +19,7 @@ class VolumeoCommands():
             print 'exeption volumio req'
             print e
             vol_status = {}
-        return vol_status
+        print vol_status
 
     def vol_plus(self):
         command = 'plus'
