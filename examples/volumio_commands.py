@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import requests
-# pip install requests
-
 
 class VolumeoCommands():
     def __init__(self):
@@ -19,7 +17,7 @@ class VolumeoCommands():
             print 'exeption volumio req'
             print e
             vol_status = {}
-        print vol_status
+        # print vol_status
 
     def vol_plus(self):
         command = 'volume&volume=plus'

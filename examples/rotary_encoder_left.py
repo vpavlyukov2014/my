@@ -4,12 +4,12 @@
 from RPi import GPIO
 from volumio_commands import VolumeoCommands
 
-class RotaryEncoderRight:
+class RotaryEncoderLeft:
 
     def __init__(self):
-        self.clk = 20
-        self.dt = 26
-        self.sw = 13
+        self.clk = 22
+        self.dt = 27
+        self.sw = 17
 
         self.vol_commands = VolumeoCommands()
         self.lastDirection = -1
@@ -34,9 +34,9 @@ class RotaryEncoderRight:
             if data != self.lastDirection:
                 self.lastDirection = data
             elif data == 1:
-                self.vol_commands.vol_minus()
+                self.vol_commands.toggle_prev()
             else:
-                self.vol_commands.vol_plus()
+                self.vol_commands.toggle_next()
 
     def _switchCallback(self, pin):
         if GPIO.input(self.sw) == 0:
