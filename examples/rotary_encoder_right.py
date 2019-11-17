@@ -29,16 +29,12 @@ class RotaryEncoderRight():
                 if clkState != self.clkLastState:
                     if dtState != clkState:
                             self.counter += 1
-                            if self.counter > 1:
-                                self.vol_commands.vol_plus()
-                                self.counter = 0
+                            self.vol_commands.vol_plus()
                     else:
                             self.counter -= 1
-                            if self.counter < -1:
-                                self.vol_commands.vol_minus()
-                                self.counter = 0
+                            self.vol_commands.vol_minus()
                     print self.counter
                 self.clkLastState = clkState
-                sleep(0.01)
+                sleep(0.1)
         finally:
                 GPIO.cleanup()
